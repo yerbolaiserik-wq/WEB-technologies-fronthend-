@@ -1,246 +1,59 @@
-/*
-Palette:
-#f7ead2 - warm paper background for the restaurant theme.
-#17402a - deep green for navigation and headings.
-#7a2e13 - clay accent inspired by cooked food and tea.
-#d9b46f - soft gold for borders and highlights.
-rgba(23, 64, 42, 0.12) - transparent green for quiet panels.
-*/
-
-* {
-    box-sizing: border-box;
+/* Assignment 3: Bootstrap handles layout, spacing, nav, buttons, cards, and grid. */
+/* :root stores shared colour variables for the whole site. */
+:root {
+    --dostyk-paper: #f7ead2;
+    --dostyk-green: #17402a;
+    --dostyk-clay: #7a2e13;
+    --dostyk-gold: #d9b46f;
 }
-
-html {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
+/* body controls the page background, main text colour, and font. */
 body {
-    margin: 0;
-    padding: 0;
-    background: #f7ead2;
-    color: rgb(31, 25, 19);
+    background: var(--dostyk-paper);
+    color: #1f1913;
     font-family: Georgia, "Times New Roman", serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.6;
-    letter-spacing: 0;
 }
-
-h1,
-h2,
-h3 {
-    color: #17402a;
-    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
-    font-weight: 700;
-    line-height: 1.2;
-    letter-spacing: 0.02em;
+/* h1, h2, h3, .navbar-brand control headings and the navbar site name. */
+h1, h2, h3, .navbar-brand { font-family: "Trebuchet MS", Verdana, Arial, sans-serif; }
+/* a controls normal links. */
+a { color: var(--dostyk-green); }
+/* a:hover, a:focus control links when selected. */
+a:hover, a:focus { color: var(--dostyk-clay); }
+/* .site-header, .site-footer control the top and bottom green areas. */
+.site-header, .site-footer { background: var(--dostyk-green); }
+/* .brand-star controls the star beside the restaurant name. */
+.brand-star { color: var(--dostyk-gold); }
+/* .bg-paper gives an element the page paper colour. */
+.bg-paper { background: var(--dostyk-paper); }
+/* .bg-soft-green gives cards and alerts a light green background. */
+.bg-soft-green { background: rgba(23, 64, 42, 0.12); }
+/* .text-brand gives text the restaurant green colour. */
+.text-brand { color: var(--dostyk-green); }
+/* .btn-primary changes Bootstrap primary buttons to restaurant green. */
+.btn-primary {
+    background: var(--dostyk-green);
+    border-color: var(--dostyk-green);
 }
-
-h2 + p {
-    margin-top: 0.35rem;
+/* .btn-primary:hover, .btn-primary:focus control selected primary buttons. */
+.btn-primary:hover, .btn-primary:focus {
+    background: var(--dostyk-clay);
+    border-color: var(--dostyk-clay);
 }
-
-a {
-    color: #17402a;
-    font-weight: 700;
+/* .btn-outline-primary changes Bootstrap outline buttons to restaurant green. */
+.btn-outline-primary {
+    color: var(--dostyk-green);
+    border-color: var(--dostyk-green);
 }
-
-a:hover,
-a:focus {
-    color: #7a2e13;
-    outline: 2px solid #d9b46f;
-    outline-offset: 3px;
+/* .btn-outline-primary:hover, .btn-outline-primary:focus control selected outline buttons. */
+.btn-outline-primary:hover, .btn-outline-primary:focus {
+    background: var(--dostyk-green);
+    border-color: var(--dostyk-green);
 }
-
-img {
-    max-width: 100%;
-    height: auto;
-    border: 3px solid #d9b46f;
-}
-
+/* .menu-photo, .story-photo control borders on restaurant photos. */
+.menu-photo, .story-photo { border: 3px solid var(--dostyk-gold); }
+/* .skip-link hides the accessibility skip link until keyboard focus. */
 .skip-link {
-    display: inline-block;
-    margin: 0.75rem;
-    padding: 0.45rem 0.75rem;
-    background: #17402a;
-    color: white;
-    border-radius: 0.35rem;
+    z-index: 1030;
+    transform: translateY(-180%);
 }
-
-/* position: fixed keeps the phone action visible while the page scrolls. */
-.fixed-call {
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    z-index: 10;
-    padding: 0.65rem 0.85rem;
-    background: #7a2e13;
-    color: white;
-    border: 2px solid #d9b46f;
-    border-radius: 999px;
-    text-decoration: none;
-}
-
-/* position: relative creates the containing block for the absolute tagline. */
-.site-header {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
-    border-bottom: 4px solid #d9b46f;
-    background: #17402a;
-    color: white;
-    text-align: center;
-}
-
-.site-title {
-    margin: 0;
-    color: white;
-    font-size: 2.4rem;
-}
-
-.site-title::before {
-    content: "★ ";
-    color: #d9b46f;
-}
-
-/* Centering technique 1: absolute positioning with transform fits the small header label. */
-.site-tagline {
-    position: absolute;
-    left: 50%;
-    bottom: 0.35rem;
-    transform: translateX(-50%);
-    margin: 0;
-    font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    color: #d9b46f;
-}
-
-.site-nav > ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.site-nav a {
-    display: inline-block;
-    padding: 0.55rem 0.8rem;
-    color: white;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    text-decoration: none;
-}
-
-.site-nav a[aria-current="page"] {
-    background: #d9b46f;
-    color: #17402a;
-}
-
-/* Centering technique 2: margin auto keeps the main content column centered. */
-.page-shell {
-    max-width: 1120px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-/* Grid suits the page shell because sections and figures can span different column widths cleanly. */
-.page-shell {
-    display: grid;
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 1.25rem;
-}
-
-/* position: static is the default; it is stated here to show normal document flow for content sections. */
-.page-section {
-    position: static;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem 1rem;
-    grid-column: span 12;
-    padding: 1.25rem;
-    background: rgba(23, 64, 42, 0.12);
-    border: 1px solid #d9b46f;
-}
-
-/* Grid suits content sections because headings, notes, forms, and tables need predictable two-column alignment. */
-.page-section > h2,
-.page-section > p,
-.page-section > table,
-.page-section > form,
-.page-section > ol,
-.page-section > dl {
-    grid-column: 1 / -1;
-}
-
-.media-card {
-    grid-column: span 6;
-    margin: 0;
-    padding: 1rem;
-    background: white;
-    border: 1px solid #d9b46f;
-}
-
-.featured-card {
-    grid-column: span 6;
-}
-
-.media-card figcaption {
-    margin-top: 0.5rem;
-    text-align: center;
-    font-size: 0.95rem;
-    font-weight: 700;
-}
-
-.opening-hours {
-    grid-column: span 4;
-}
-
-#contact {
-    border-left: 6px solid #7a2e13;
-}
-
-.quote-card {
-    grid-column: span 8;
-}
-
-/* Margin collapse note: section padding prevents the first heading margin from collapsing outside the card. */
-.page-section > :first-child {
-    margin-top: 0;
-}
-
-.site-footer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-    background: #17402a;
-    color: white;
-    border-top: 4px solid #d9b46f;
-}
-
-.site-footer > * {
-    flex: 1 1 18rem;
-}
-
-.site-footer a {
-    color: #d9b46f;
-}
-
-.contact-block {
-    font-style: normal;
-}
+/* .skip-link:focus shows the skip link when pressing Tab. */
+.skip-link:focus { transform: translateY(0); }

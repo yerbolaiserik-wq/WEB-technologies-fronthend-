@@ -6,355 +6,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dostyk restaurant ас мәзірі және негізгі бағалары">
     <meta name="author" content="Aiserik Yerbol">
+    <!-- Bootstrap 5.3.3 from CDN is used for Assignment 3 layout, navbar, buttons, cards, and responsive utilities. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/aiserik.css">
-    <title>Dostyk restaurant — Ас мәзірі</title>
+    <title>Dostyk restaurant - Ас мәзірі</title>
 </head>
 
 <body>
-    <p><a class="skip-link" href="#main-content">Негізгі мазмұнға өту</a></p>
-    <a class="fixed-call" href="tel:+77475791323">Қоңырау</a>
+    <a class="skip-link position-absolute top-0 start-0 m-3 btn btn-primary btn-sm" href="#main-content">Негізгі мазмұнға өту</a>
 
-    <header class="site-header">
-        <h1 class="site-title">Dostyk restaurant</h1>
-        <p class="site-tagline">Ас мәзірі</p>
-        <!-- Relative links are used so every page works from the project folder. -->
-        <nav class="site-nav" aria-label="Негізгі навигация">
-            <ul>
-                <li><a href="index.html">Басты бет</a></li>
-                <li><a href="menu.html" aria-current="page">Ас мәзірі</a></li>
-                <li><a href="order.html">Тапсырыс беру</a></li>
-            </ul>
+    <header class="site-header text-white">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <!-- container-fluid is used because the navigation background should stay full width. -->
+            <div class="container-fluid px-3 px-md-5">
+                <a class="navbar-brand fs-2 fw-bold" href="index.html">
+                    <span class="brand-star">★</span> Dostyk <span class="d-none d-sm-inline">restaurant</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Мәзірді ашу">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto gap-md-2 text-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Басты бет</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="menu.html">Ас мәзірі</a></li>
+                        <li class="nav-item"><a class="nav-link" href="order.html">Тапсырыс беру</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+        <p class="hero-note text-warning text-center fw-bold mb-0 pb-3 d-none d-md-block">Ас мәзірі</p>
     </header>
 
-    <!-- This id is unique because the skip link needs exactly one landing point on the page. -->
-    <main id="main-content" class="page-shell">
-        <!-- This id is unique because category links jump back to the menu table. -->
-        <section id="prices" class="page-section menu-layout">
-            <h2>Толық ас мәзірі</h2>
-            <p>
-                Dostyk restaurant мәзірінде бірінші тағамдар, палау, фаст-фуд, салаттар, тұздықтар және сусындар бар. Негізгі тағам — <abbr title="Қазақ халқының дәстүрлі тағамы">палау</abbr>, ал сусындар күн сайын <i>жаңа дайындалады</i>.
-            </p>
-            <p><a href="#categories">Категорияларға өту</a></p>
-
-            <!-- A table is used because real prices are easier to compare in rows and columns. -->
-            <table class="menu-table" aria-describedby="menu-note">
-                <caption>Суреттегі мәзір бойынша бағалар</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Категория</th>
-                        <th scope="col">Атауы</th>
-                        <th scope="col">Мөлшері</th>
-                        <th scope="col">Бағасы</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="rowgroup" rowspan="5">Бірінші тағамдар</th>
-                        <td>Сорпа</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Гүйру лағман</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Тұшпара</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Нарын</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Бульон</td>
-                        <td>1 порция</td>
-                        <td>700 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup" rowspan="9">Екінші тағамдар</th>
-                        <td>Палау</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Ұнқуырдақ</td>
-                        <td>1 порция</td>
-                        <td>2 200 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Қуырылған лағман</td>
-                        <td>1 порция</td>
-                        <td>2 200 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Қуырдақ</td>
-                        <td>1 порция</td>
-                        <td>3 800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Қазан кебаб</td>
-                        <td>1 порция</td>
-                        <td>2 900 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Ханума</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Орамжапырақ орамасы</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Картоп езбесімен котлет</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Күрішпен тұздық</td>
-                        <td>1 порция</td>
-                        <td>2 000 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup" rowspan="8">Фаст-фуд</th>
-                        <td>Маргарита пиццасы</td>
-                        <td>1 дана</td>
-                        <td>2 100 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Төрт сыр пиццасы</td>
-                        <td>1 дана</td>
-                        <td>2 600 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Пепперони пиццасы</td>
-                        <td>1 дана</td>
-                        <td>2 400 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>BBQ пиццасы</td>
-                        <td>1 дана</td>
-                        <td>2 400 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Сыр таяқшалары</td>
-                        <td>1 порция</td>
-                        <td>1 500 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Наггетстер, 8 дана</td>
-                        <td>1 порция</td>
-                        <td>1 500 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Картоп бөліктері</td>
-                        <td>1 порция</td>
-                        <td>1 500 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Фри</td>
-                        <td>1 порция</td>
-                        <td>1 000 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup" rowspan="3">Салаттар</th>
-                        <td>Оливье</td>
-                        <td>1 порция</td>
-                        <td>1 400 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Ачық-чучук</td>
-                        <td>1 порция</td>
-                        <td>1 300 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Балғын</td>
-                        <td>1 порция</td>
-                        <td>1 300 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup">Нан</th>
-                        <td>Тандыр нан</td>
-                        <td>1 дана</td>
-                        <td>150 &#8376; / 300 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup" rowspan="4">Тұздықтар</th>
-                        <td>Кетчуп</td>
-                        <td>1 порция</td>
-                        <td>200 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Майонез</td>
-                        <td>1 порция</td>
-                        <td>200 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Сырлы тұздық</td>
-                        <td>1 порция</td>
-                        <td>200 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Халапеньо</td>
-                        <td>1 порция</td>
-                        <td>200 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup" rowspan="13">Сусындар</th>
-                        <td><abbr title="Содалы сусын">Coca-Cola</abbr></td>
-                        <td>1 л</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Pepsi</td>
-                        <td>1 л</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Fanta</td>
-                        <td>1 л</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Sprite</td>
-                        <td>1 л</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Maxi шай</td>
-                        <td>1 л</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Fuse tea</td>
-                        <td>1 л</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Су</td>
-                        <td>0.5 л / 1 л</td>
-                        <td>400 &#8376; / 600 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Тұран шайы</td>
-                        <td>0.5 л / 1 л</td>
-                        <td>500 &#8376; / 800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Gorilla</td>
-                        <td>1 дана</td>
-                        <td>700 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Мохито</td>
-                        <td>1 дана</td>
-                        <td>800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Анар</td>
-                        <td>1 дана</td>
-                        <td>600 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Dizzy</td>
-                        <td>1 дана</td>
-                        <td>600 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Zigi Zagi</td>
-                        <td>1 дана</td>
-                        <td>600 &#8376;</td>
-                    </tr>
-
-                    <tr>
-                        <th scope="rowgroup" rowspan="7">Шай</th>
-                        <td>Қара шай (с/ш)<sup>1</sup></td>
-                        <td>Стақан / шәйнек</td>
-                        <td>300 &#8376; / 700 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Сүтті шай (с/ш)<sup>1</sup></td>
-                        <td>Стақан / шәйнек</td>
-                        <td>300 &#8376; / 700 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Көк шай (с/ш)<sup>1</sup></td>
-                        <td>Стақан / шәйнек</td>
-                        <td>300 &#8376; / 700 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Ташкент шайы</td>
-                        <td>1 шәйнек</td>
-                        <td>1 200 &#8376; / 1 500 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Кофе</td>
-                        <td>1 стақан</td>
-                        <td>400 &#8376; / 1 000 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Компот (с/л)<sup>2</sup></td>
-                        <td>Стақан / литр</td>
-                        <td>300 &#8376; / 800 &#8376;</td>
-                    </tr>
-                    <tr>
-                        <td>Каркаде (с/л)<sup>2</sup></td>
-                        <td>Стақан / литр</td>
-                        <td>300 &#8376; / 800 &#8376;</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p id="menu-note"><small><sup>1</sup> (с/ш) — стақанмен немесе шәйнекпен, <sup>2</sup> (с/л) — стақанмен немесе литрмен ұсынылу бағасы.</small></p>
+    <!-- The main content uses container because menu cards are easier to read with a maximum width. -->
+    <main id="main-content" class="container py-5">
+        <section class="text-center mb-4">
+            <h1 class="display-5 fw-bold text-brand">Толық ас мәзірі</h1>
         </section>
 
-        <section id="categories" class="page-section category-panel">
-            <h2>Категориялар</h2>
-            <ol type="I">
-                <li>Негізгі тағамдар
-                    <ul>
-                        <li>Палау</li>
-                        <li>Қуырдақ</li>
+        <nav class="d-flex flex-wrap justify-content-center gap-2 mb-5" aria-label="Мәзір категориялары">
+            <a class="btn btn-outline-primary btn-sm" href="#soups">Бірінші тағамдар</a>
+            <a class="btn btn-outline-primary btn-sm" href="#main-dishes">Екінші тағамдар</a>
+            <a class="btn btn-outline-primary btn-sm" href="#fast-food">Фаст-фуд</a>
+            <a class="btn btn-outline-primary btn-sm" href="#salads">Салаттар</a>
+            <a class="btn btn-outline-primary btn-sm" href="#extras">Қосымша</a>
+            <a class="btn btn-outline-primary btn-sm" href="#drinks">Сусындар</a>
+            <a class="btn btn-outline-primary btn-sm" href="#tea-list">Шай</a>
+        </nav>
+
+        <!-- Bootstrap component: cards, changed to restaurant menu categories. At 768px and wider, col-md-6 makes two cards per row. -->
+        <div class="row g-4">
+            <div class="col-12 col-md-6" id="soups">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Бірінші тағамдар</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Сорпа</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Гүйру лағман</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Тұшпара</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Нарын</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Бульон</span><strong class="price">700 &#8376;</strong></li>
                     </ul>
-                </li>
-                <li>Салаттар</li>
-                <li>Сусындар</li>
-            </ol>
+                </article>
+            </div>
 
-            <dl>
-                <dt>Нарын</dt>
-                <dd>Жұқа қамыр мен еттен жасалатын ұлттық тағам.</dd>
-                <dt>Ачык-чучук</dt>
-                <dd>Қызанақ пен пияздан дайындалатын палауға арналған салат.</dd>
-            </dl>
-            <p><a href="#prices">Бағаларға қайту</a></p>
+            <div class="col-12 col-md-6" id="main-dishes">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Екінші тағамдар</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Палау</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Ұнқуырдақ</span><strong class="price">2 200 &#8376;</strong></li>
+                        <li><span>Қуырылған лағман</span><strong class="price">2 200 &#8376;</strong></li>
+                        <li><span>Қуырдақ</span><strong class="price">3 800 &#8376;</strong></li>
+                        <li><span>Қазан кебаб</span><strong class="price">2 900 &#8376;</strong></li>
+                        <li><span>Ханума</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Орамжапырақ орамасы</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Картоп езбесімен котлет</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Күрішпен тұздық</span><strong class="price">2 000 &#8376;</strong></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6" id="fast-food">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Фаст-фуд</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Маргарита пиццасы</span><strong class="price">2 100 &#8376;</strong></li>
+                        <li><span>Төрт сыр пиццасы</span><strong class="price">2 600 &#8376;</strong></li>
+                        <li><span>Пепперони пиццасы</span><strong class="price">2 400 &#8376;</strong></li>
+                        <li><span>BBQ пиццасы</span><strong class="price">2 400 &#8376;</strong></li>
+                        <li><span>Сыр таяқшалары</span><strong class="price">1 500 &#8376;</strong></li>
+                        <li><span>Наггетстер, 8 дана</span><strong class="price">1 500 &#8376;</strong></li>
+                        <li><span>Картоп бөліктері</span><strong class="price">1 500 &#8376;</strong></li>
+                        <li><span>Фри</span><strong class="price">1 000 &#8376;</strong></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6" id="salads">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Салаттар</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Оливье</span><strong class="price">1 400 &#8376;</strong></li>
+                        <li><span>Ачық-чучук</span><strong class="price">1 300 &#8376;</strong></li>
+                        <li><span>Балғын</span><strong class="price">1 300 &#8376;</strong></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6" id="extras">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Нан және тұздықтар</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Тандыр нан</span><strong class="price">150 / 300 &#8376;</strong></li>
+                        <li><span>Кетчуп</span><strong class="price">200 &#8376;</strong></li>
+                        <li><span>Майонез</span><strong class="price">200 &#8376;</strong></li>
+                        <li><span>Сырлы тұздық</span><strong class="price">200 &#8376;</strong></li>
+                        <li><span>Халапеньо</span><strong class="price">200 &#8376;</strong></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-12 col-md-6" id="drinks">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Сусындар</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Coca-Cola, Pepsi, Fanta, Sprite</span><strong class="price">800 &#8376;</strong></li>
+                        <li><span>Maxi шай, Fuse tea</span><strong class="price">800 &#8376;</strong></li>
+                        <li><span>Су 0.5 л / 1 л</span><strong class="price">400 / 600 &#8376;</strong></li>
+                        <li><span>Тұран шайы 0.5 л / 1 л</span><strong class="price">500 / 800 &#8376;</strong></li>
+                        <li><span>Gorilla</span><strong class="price">700 &#8376;</strong></li>
+                        <li><span>Мохито</span><strong class="price">800 &#8376;</strong></li>
+                        <li><span>Анар, Dizzy, Zigi Zagi</span><strong class="price">600 &#8376;</strong></li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="col-12" id="tea-list">
+                <article class="card h-100">
+                    <div class="card-header bg-soft-green">
+                        <h2 class="h4 text-brand mb-0">Шай</h2>
+                    </div>
+                    <ul class="menu-list">
+                        <li><span>Қара шай</span><strong class="price">300 / 700 &#8376;</strong></li>
+                        <li><span>Сүтті шай</span><strong class="price">300 / 700 &#8376;</strong></li>
+                        <li><span>Көк шай</span><strong class="price">300 / 700 &#8376;</strong></li>
+                        <li><span>Ташкент шайы</span><strong class="price">1 200 / 1 500 &#8376;</strong></li>
+                        <li><span>Кофе</span><strong class="price">400 / 1 000 &#8376;</strong></li>
+                        <li><span>Компот</span><strong class="price">300 / 800 &#8376;</strong></li>
+                        <li><span>Каркаде</span><strong class="price">300 / 800 &#8376;</strong></li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+
+        <section class="row g-4 align-items-center mt-5">
+            <div class="col-12 col-md-6">
+                <img class="img-fluid rounded shadow menu-photo" src="images/palay.jpg" alt="Dostyk restaurant дәмханасының палауы" width="400" height="225" loading="lazy">
+            </div>
+            <div class="col-12 col-md-6 text-center text-md-start">
+                <h2 class="h3 text-brand">Ұсыныс</h2>
+                <p>Негізгі тағамға палау және шай жиі бірге алынады.</p>
+                <a class="btn btn-primary" href="order.html">Тапсырыс беру</a>
+            </div>
         </section>
-
-        <figure class="media-card menu-photo">
-            <img src="images/palay.jpg" alt="Dostyk restaurant дәмханасының палауы" width="400" height="225" loading="lazy">
-            <figcaption>Дәмхананың негізгі тағамы — палау</figcaption>
-        </figure>
     </main>
 
-    <footer class="site-footer">
-        <address class="contact-block">
-            Қарағанды қаласы, Шағын аудан Степной-4, 30 &vert;
-            Телефон: <a href="tel:+77475791323">+7-747-579-13-23</a> &vert;
-            Email: <a href="mailto:info@dostyk.kz">info@dostyk.kz</a>
-        </address>
-        <p>&copy; 2026 «Dostyk restaurant». Барлық құқықтары қорғалған. &trade;</p>
+    <footer class="site-footer text-white py-4">
+        <div class="container d-md-flex justify-content-between align-items-center text-center text-md-start">
+            <address class="mb-3 mb-md-0">
+                Қарағанды қаласы, Шағын аудан Степной-4, 30 |
+                <a class="link-warning" href="tel:+77475791323">+7-747-579-13-23</a>
+            </address>
+            <div class="text-center text-md-end">
+                <p class="mb-1">Промокод: <span class="promo-code rounded px-2 py-1">KHAN2552</span></p>
+                <p class="mb-0">&copy; 2026 Dostyk restaurant.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

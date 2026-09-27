@@ -1,170 +1,31 @@
-/* Personal stylesheet for Aiserik Yerbol. */
-
-.intro-grid {
-    grid-column: span 8;
+/* Personal Bootstrap correction layer for Aiserik Yerbol. */
+/* .hero-note controls the small yellow subtitle under the navbar. */
+.hero-note { letter-spacing: 0.08em; }
+/* .card-img-top controls images at the top of Bootstrap cards. */
+.card-img-top {
+    height: 14rem;
+    object-fit: cover;
 }
-
-.float-story {
-    overflow: auto;
+/* .menu-list controls the food list inside each menu category card. */
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-
-.story-photo {
-    float: left;
-    width: 9rem;
-    margin: 0.25rem 1rem 0.5rem 0;
-}
-
-/* Without clear, this paragraph could slide beside the floated photo above it. */
-.clear-float {
-    clear: both;
-    font-weight: 700;
-}
-
-.menu-layout {
-    grid-column: span 12;
-}
-
-.menu-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-}
-
-.menu-table caption {
-    padding: 0.75rem;
-    color: #17402a;
-    font-weight: 700;
-    text-align: left;
-}
-
-.menu-table th,
-.menu-table td {
-    padding: 0.55rem 0.65rem;
-    border: 1px solid #d9b46f;
-    text-align: left;
-}
-
-.menu-table thead th {
-    background: #17402a;
-    color: white;
-}
-
-.menu-table tbody tr:nth-child(even) {
-    background: rgba(23, 64, 42, 0.08);
-}
-
-.category-panel {
-    grid-column: span 7;
-}
-
-.category-panel ol {
+/* .menu-list li controls each food row: name left, price right. */
+.menu-list li {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: space-between;
     gap: 1rem;
-    padding-left: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #dee2e6;
 }
-
-.category-panel li {
-    flex: 1 1 12rem;
-}
-
-.menu-photo {
-    grid-column: span 5;
-}
-
-.order-layout {
-    align-items: start;
-}
-
-.form-card {
-    grid-column: span 8;
-    background: white;
-    border-color: #d9b46f;
-}
-
-.form-card fieldset {
-    margin: 1rem 0;
-    padding: 1rem;
-    border: 2px solid #d9b46f;
-}
-
-.form-card legend {
-    color: #17402a;
-    font-weight: 700;
-}
-
-.form-card input,
-.form-card select,
-.form-card textarea {
-    width: min(100%, 28rem);
-    padding: 0.55rem;
-    border: 1px solid #7a2e13;
-    font: inherit;
-}
-
-.form-card input[type="radio"],
-.form-card input[type="checkbox"] {
-    width: auto;
-}
-
-input[type="submit"],
-input[type="reset"] {
-    width: auto;
-    cursor: pointer;
-}
-
-.primary-action {
-    background: #17402a;
-    color: white;
-}
-
-.secondary-action {
-    background: #f7ead2;
-    color: #17402a;
-}
-
-.notice-card {
-    grid-column: span 4;
-    border-color: #7a2e13;
-}
-
+/* .price controls the menu price text. */
+.price { white-space: nowrap; }
+/* .promo-code controls the promo code in the footer. */
 .promo-code {
-    padding: 0.15rem 0.35rem;
     background: #d9b46f;
     color: #17402a;
     font-weight: 700;
-    letter-spacing: 0.03em;
-}
-
-/* Specificity 0-1-0: this targets the order form card, but it loses to the next rule. */
-.form-card {
-    border-color: #d9b46f;
-}
-
-/* Specificity 1-1-0: this wins because an id plus a class is more specific. */
-#order-form.form-card {
-    border-color: #7a2e13;
-}
-
-.file-summary {
-    display: grid;
-    place-items: center;
-    grid-column: span 6;
-    padding: 1rem;
-    border: 1px dashed #7a2e13;
-}
-
-/* Centering technique 3: grid place-items centers the short file facts both ways. */
-.file-summary p {
-    margin: 0.25rem;
-    text-align: center;
-}
-
-.cascade-demo {
-    color: #17402a;
-    font-weight: 700;
-}
-
-a[href^="mailto:"]::after {
-    content: " ✉";
+    letter-spacing: 0.08em;
 }

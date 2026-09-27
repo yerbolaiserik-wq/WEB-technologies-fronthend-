@@ -6,117 +6,143 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dostyk restaurant тапсырыс беру және үстел брондау формасы">
     <meta name="author" content="Aiserik Yerbol">
+    <!-- Bootstrap 5.3.3 from CDN is used for Assignment 3 layout, navbar, buttons, forms, and responsive utilities. -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/aiserik.css">
-    <title>Dostyk restaurant — Тапсырыс беру</title>
+    <title>Dostyk restaurant - Тапсырыс беру</title>
 </head>
 
 <body>
-    <p><a class="skip-link" href="#main-content">Негізгі мазмұнға өту</a></p>
-    <a class="fixed-call" href="tel:+77475791323">Қоңырау</a>
-
-    <header class="site-header">
-        <h1 class="site-title">Dostyk restaurant</h1>
-        <p class="site-tagline">Тапсырыс және брондау</p>
-        <!-- This nav stays identical across pages so the local website feels like one project. -->
-        <nav class="site-nav" aria-label="Негізгі навигация">
-            <ul>
-                <li><a href="index.html">Басты бет</a></li>
-                <li><a href="menu.html">Ас мәзірі</a></li>
-                <li><a href="order.html" aria-current="page">Тапсырыс беру</a></li>
-            </ul>
+    <a class="skip-link position-absolute top-0 start-0 m-3 btn btn-primary btn-sm" href="#main-content">Негізгі мазмұнға өту</a>
+    <header class="site-header text-white">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <!-- container-fluid is used here because the navigation should stay full width on every page. -->
+            <div class="container-fluid px-3 px-md-5">
+                <a class="navbar-brand fs-2 fw-bold" href="index.html">
+                    <span class="brand-star">★</span> Dostyk <span class="d-none d-sm-inline">restaurant</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Мәзірді ашу">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto gap-md-2 text-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Басты бет</a></li>
+                        <li class="nav-item"><a class="nav-link" href="menu.html">Ас мәзірі</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="order.html">Тапсырыс беру</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+        <p class="hero-note text-warning text-center fw-bold mb-0 pb-3 d-none d-md-block">Тапсырыс және брондау</p>
     </header>
 
-    <!-- This id is unique because the skip link needs exactly one landing point on the page. -->
-    <main id="main-content" class="page-shell order-layout">
-        <!-- This id is unique because it identifies the only order form on the page. -->
-        <section id="order-form" class="page-section form-card">
-            <h2>Тапсырыс және брондау</h2>
-            <p>Төмендегі форма арқылы жеткізуге тапсырыс беруге немесе үстел брондауға болады.</p>
+    <!-- The main content uses container because the form is easier to complete in a centered readable column. -->
+    <main id="main-content" class="container py-5">
+        <div class="row justify-content-center">
+            <section id="order-form" class="col-12">
+                <div class="card shadow-sm border-warning">
+                    <div class="card-body">
+                        <h1 class="display-6 fw-bold text-brand">Тапсырыс және брондау</h1>
+                        <p class="lead">Төмендегі форма арқылы жеткізуге тапсырыс беруге немесе үстел брондауға болады.</p>
 
-            <form action="#" method="post">
-                <!-- The form does not send data yet because server-side processing will be studied later. -->
-                <fieldset>
-                    <legend>Жеке мәліметтер</legend>
-                    <p>
-                        <label for="username">Аты-жөніңіз:</label><br>
-                        <input type="text" id="username" name="username" placeholder="Т.А.Ә" autocomplete="name" required>
-                    </p>
-                    <p>
-                        <label for="useremail">Электронды пошта:</label><br>
-                        <input type="email" id="useremail" name="useremail" placeholder="example@gmail.com" autocomplete="email" required>
-                    </p>
-                    <p>
-                        <label for="userphone">Телефон:</label><br>
-                        <input type="tel" id="userphone" name="userphone" placeholder="+7**********" autocomplete="tel" required>
-                    </p>
-                </fieldset>
+                        <!-- This form is a nested Bootstrap row inside the col-12 column. -->
+                        <form action="#" method="post" class="row g-3">
+                            <div class="col-12">
+                                <h2 class="h5 text-brand">Жеке мәліметтер</h2>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="username">Аты-жөніңіз</label>
+                                <input class="form-control" type="text" id="username" name="username" placeholder="Т.А.Ә" autocomplete="name" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="useremail">Электронды пошта</label>
+                                <input class="form-control" type="email" id="useremail" name="useremail" placeholder="example@gmail.com" autocomplete="email" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="userphone">Телефон</label>
+                                <input class="form-control" type="tel" id="userphone" name="userphone" placeholder="+7**********" autocomplete="tel" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="orderdate">Күні</label>
+                                <input class="form-control" type="date" id="orderdate" name="orderdate" required>
+                            </div>
 
-                <fieldset>
-                    <legend>Тапсырыс мәліметі</legend>
-                    <p>
-                        <label for="orderdate">Күні:</label><br>
-                        <input type="date" id="orderdate" name="orderdate" required>
-                    </p>
-                    <p>
-                        <label for="portion_num">Порция саны:</label><br>
-                        <input type="number" id="portion_num" name="portion_num" min="1" max="30" value="1" required>
-                    </p>
-                    <p>
-                        <label for="main_dish">Негізгі тағам:</label><br>
-                        <select id="main_dish" name="main_dish" required>
-                            <option value="">Таңдаңыз</option>
-                            <option value="palau">Палау — 2 000 &#8376;</option>
-                            <option value="kuyrdak">Қуырдақ — 3 800 &#8376;</option>
-                            <option value="lagman">Гүйру лағман — 2 000 &#8376;</option>
-                        </select>
-                    </p>
-                    <p>Қызмет түрі:<br>
-                        <input type="radio" id="delivery" name="service_type" value="delivery" checked>
-                        <label for="delivery">Жеткізу</label><br>
-                        <input type="radio" id="pickup" name="service_type" value="pickup">
-                        <label for="pickup">Өзім алып кетемін</label><br>
-                        <input type="radio" id="dinein" name="service_type" value="dinein">
-                        <label for="dinein">Дәмханада жеймін</label>
-                    </p>
-                    <p>Қосымша:<br>
-                        <input type="checkbox" id="tea" name="extras" value="tea">
-                        <label for="tea">шай</label><br>
-                        <input type="checkbox" id="salad" name="extras" value="salad">
-                        <label for="salad">Ачык-чучук</label>
-                    </p>
-                    <p>
-                        <label for="comments">Мекенжай немесе ескерту:</label><br>
-                        <textarea id="comments" name="comments" rows="4" cols="40" placeholder="Көше, үй, пәтер немесе ұсыныс..." autocomplete="street-address"></textarea>
-                    </p>
-                    <p>
-                        <input class="primary-action" type="submit" value="Тапсырысты растау">
-                        <input class="secondary-action" type="reset" value="Тазалау">
-                    </p>
-                </fieldset>
-            </form>
-        </section>
+                            <div class="col-12">
+                                <h2 class="h5 text-brand mt-3">Тапсырыс мәліметі</h2>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="portion_num">Порция саны</label>
+                                <input class="form-control" type="number" id="portion_num" name="portion_num" min="1" max="30" value="1" required>
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <label class="form-label" for="main_dish">Негізгі тағам</label>
+                                <select class="form-select" id="main_dish" name="main_dish" required>
+                                    <option value="">Таңдаңыз</option>
+                                    <option value="palau">Палау - 2 000 &#8376;</option>
+                                    <option value="kuyrdak">Қуырдақ - 3 800 &#8376;</option>
+                                    <option value="lagman">Гүйру лағман - 2 000 &#8376;</option>
+                                </select>
+                            </div>
 
-        <!-- Span is used only for the short promo code because no stronger semantic element is needed. -->
-        <aside class="page-section notice-card">
-            <h2>Ескерту</h2>
-            <!-- This inline style exists only to demonstrate the cascade; it overrides the external .promo-code letter-spacing. -->
-            <p>Ағымдағы промокод: <span class="promo-code" style="letter-spacing: 0.12em;">KHAN2552</span></p>
-            <!-- This div groups a small technical note that is not a separate article or section. -->
-            <div class="info-block">
-                <p>Бетті сақтағыңыз келсе, <kbd>Ctrl</kbd> + <kbd>S</kbd> пернелерін басыңыз.</p>
-            </div>
-        </aside>
+                            <fieldset class="col-12 col-md-6">
+                                <legend class="h6 text-brand">Қызмет түрі</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="delivery" name="service_type" value="delivery" checked>
+                                    <label class="form-check-label" for="delivery">Жеткізу</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="pickup" name="service_type" value="pickup">
+                                    <label class="form-check-label" for="pickup">Өзім алып кетемін</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="dinein" name="service_type" value="dinein">
+                                    <label class="form-check-label" for="dinein">Дәмханада жеймін</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="col-12 col-md-6">
+                                <legend class="h6 text-brand">Қосымша</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="tea" name="extras" value="tea">
+                                    <label class="form-check-label" for="tea">Шай</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="salad" name="extras" value="salad">
+                                    <label class="form-check-label" for="salad">Ачық-чучук</label>
+                                </div>
+                            </fieldset>
+
+                            <div class="col-12">
+                                <label class="form-label" for="comments">Мекенжай немесе ескерту</label>
+                                <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Көше, үй, пәтер немесе ұсыныс..." autocomplete="street-address"></textarea>
+                            </div>
+
+                            <div class="col-12 d-flex flex-wrap gap-2">
+                                <button class="btn btn-primary" type="submit">Тапсырысты растау</button>
+                                <button class="btn btn-outline-primary" type="reset">Тазалау</button>
+                                <a class="btn btn-outline-primary" href="menu.html">Мәзірге қайту</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer class="site-footer">
-        <address class="contact-block">
-            Қарағанды қаласы, Шағын аудан Степной-4, 30 &vert;
-            Телефон: <a href="tel:+77475791323">+7-747-579-13-23</a> &vert;
-            Email: <a href="mailto:info@dostyk.kz">info@dostyk.kz</a>
-        </address>
-        <p>&copy; 2026 «Dostyk restaurant». Барлық құқықтары қорғалған. &trade;</p>
+    <footer class="site-footer text-white py-4">
+        <div class="container d-md-flex justify-content-between align-items-center text-center text-md-start">
+            <address class="mb-3 mb-md-0">
+                Қарағанды қаласы, Шағын аудан Степной-4, 30 |
+                <a class="link-warning" href="tel:+77475791323">+7-747-579-13-23</a>
+            </address>
+            <div class="text-center text-md-end">
+                <p class="mb-1">Промокод: <span class="promo-code rounded px-2 py-1">KHAN2552</span></p>
+                <p class="mb-0">&copy; 2026 Dostyk restaurant.</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

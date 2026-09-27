@@ -1,45 +1,32 @@
-# WEB-technologies-frontend-assignment-1
+# Dostyk Restaurant
 
-# created by Yerbol Aisyerik from SE-2536
+Created by Yerbol Aiserik from SE-2536.
 
-This repository contains the complete source code, media assets, and technical documentation for **Dostyk Restaurant**, an accessible and semantically structured multi-page web project. The Assignment 2 version adds external CSS for layout, typography, color, spacing, flexbox, grid, positioning, float, clear, and cascade demonstrations.
+This is the Assignment 3 version of the Dostyk Restaurant website. The project continues the same restaurant theme and the same three pages, but the layout is now rebuilt with Bootstrap 5.3.3.
 
-The site is designed with HTML5 and plain CSS only. It does not use JavaScript, CSS frameworks, templates, site builders, or hosting.
+## Pages
 
----
+- `index.html` - home page with restaurant introduction, responsive cards, and contact information.
+- `menu.html` - menu page with responsive category cards and simple menu lists.
+- `order.html` - order and booking form with Bootstrap form classes.
 
-# Project Structure & Architecture
+## CSS Files
 
-To satisfy academic submission requirements and maintain a clean root hierarchy, all primary HTML documents and documentation files are hosted directly at the root level, with media assets organized in a dedicated directory:
+- `css/base.css` - small shared correction layer for Dostyk colours, fonts, and buttons.
+- `css/aiserik.css` - small personal correction layer for card images, menu lists, prices, and promo code.
 
-* **`index.html`** — The primary landing page featuring high-level restaurant branding, global navigation links, and introductory content.
-* **`menu.html`** — The interactive menu page detailing dish categories, ingredients, pricing tables, and promotional items.
-* **`order.html`** — The web form interface designed for customer order placement, featuring client-side form controls and input structure.
-* **`css/base.css`** — Shared stylesheet for palette, typography, header, nav, main layout, and footer.
-* **`css/aiserik.css`** — Personal stylesheet for page-specific components, table/form styling, float/clear, and specificity experiment.
-* **`CSS_CHECKLIST.md`** — Assignment 2 checklist with selector and technique line references.
-* **`images/`** — Dedicated directory housing all visual assets referenced across the web application:
-  * `interior.jpg` — High-resolution imagery of the restaurant's interior dining space.
-  * `outside.jpg` — Exterior façade and location identification photo.
-  * `palay.jpg` — Featured food presentation asset.
-* **`web technologies(report file).pdf`** — The official academic project report detailing requirements fulfillment, design process, and submission specifications.
+Bootstrap now does the main layout, spacing, navigation, grid, cards, buttons, and form styling. My own CSS is intentionally short.
 
----
+## Assignment 3 Notes
 
-## Technical Features & Standards
+- Bootstrap is linked from CDN on every page.
+- Every page has a responsive Bootstrap navbar with a working toggler.
+- The project uses both `container-fluid` and `container`.
+- The pages use Bootstrap `row` and `col-*` classes for responsive layout.
+- The order form shows a nested Bootstrap `row` inside a `col-12` column.
+- The project uses Bootstrap cards, alerts, buttons, and form classes.
+- `bootstrap.md` explains which old Assignment 2 CSS rules Bootstrap replaced.
 
-Semantic Markup:Built exclusively using structural HTML5 elements (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, and `<footer>`) to promote SEO visibility and screen-reader compatibility.
-Form Architecture: The order interface incorporates varied input types, fieldsets, legends, and attribute-based form validation to ensure structured user input.
-Asset Pathing: All media elements utilize clean relative pathing pointing directly to the `images/` directory to prevent broken references during local or remote deployment.
-CSS Architecture: Every page loads `css/base.css` first and `css/aiserik.css` second. This shows the cascade and keeps shared rules separate from page-specific styling.
-Clean Git Workflow: Managed with Git version control to ensure a tidy commit history, correct remote tracking, and no redundant nested repository structures.
+## Local Use
 
----
-
-## Local Setup & Deployment
-
-To run and inspect this project locally on your machine:
-
-1. **Clone the Repository:**
-   ```bash
-   git clone [https://github.com/yerbolaiserik-wq/WEB-technologies-fronthend-assignment-1.git](https://github.com/yerbolaiserik-wq/WEB-technologies-fronthend-assignment-1.git)
+Open `index.html` in a browser. No hosting or domain is required.
