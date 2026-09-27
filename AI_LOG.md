@@ -19,7 +19,7 @@ What I used:
 
 \- I used AI suggestions to organize `base.css`, `aiserik.css`, and `CSS\_CHECKLIST.md`.
 
-\- I reviewed the code and kept only the parts I understand and can explain.
+\- I reviewed the code and explained. 
 
 
 
@@ -32,7 +32,7 @@ Important note:
 
 Date: 2026-09-26
 
-Tool used: ChatGPT
+Tool used: Gemini
 
 What I asked:
 
