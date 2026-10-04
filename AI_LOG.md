@@ -67,7 +67,7 @@ What I used:
 
 Date: 2026-10-02
 
-Tool used: ChatGPT
+Tool used: Codex
 
 What I asked:
 
