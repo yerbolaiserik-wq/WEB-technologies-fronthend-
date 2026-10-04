@@ -45,6 +45,7 @@
         </section>
 
         <nav class="d-flex flex-wrap justify-content-center gap-2 mb-5" aria-label="Мәзір категориялары">
+            <a class="btn btn-primary btn-sm" href="#cart">Таңдау</a>
             <a class="btn btn-outline-primary btn-sm" href="#soups">Бірінші тағамдар</a>
             <a class="btn btn-outline-primary btn-sm" href="#main-dishes">Екінші тағамдар</a>
             <a class="btn btn-outline-primary btn-sm" href="#fast-food">Фаст-фуд</a>
@@ -54,6 +55,19 @@
             <a class="btn btn-outline-primary btn-sm" href="#tea-list">Шай</a>
         </nav>
 
+        <form id="menu-cart-form" action="order.html" method="get">
+            <section id="cart" class="alert bg-soft-green border border-warning shadow-sm mb-4">
+                <div class="row g-3 align-items-center">
+                    <div class="col-12 col-md">
+                        <h2 class="h4 text-brand">Тағам таңдау</h2>
+                        <p class="mb-0">Әр тағамнан нешеу алатыныңызды нақтылап, тапсырыс бетіне өтіңіз.</p>
+                    </div>
+                    <div class="col-12 col-md-auto">
+                        <button id="submit-cart" class="btn btn-primary" type="submit">Таңдалған тағамдарды тапсыру</button>
+                    </div>
+                </div>
+            </section>
+
         <!-- Bootstrap component: cards, changed to restaurant menu categories. At 768px and wider, col-md-6 makes two cards per row. -->
         <div class="row g-4">
             <div class="col-12 col-md-6" id="soups">
@@ -62,11 +76,11 @@
                         <h2 class="h4 text-brand mb-0">Бірінші тағамдар</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Сорпа</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Гүйру лағман</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Тұшпара</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Нарын</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Бульон</span><strong class="price">700 &#8376;</strong></li>
+                        <li><span>Сорпа</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_sorpa">Сорпа саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_sorpa" name="qty_sorpa" min="0" max="20" value="0"></li>
+                        <li><span>Гүйру лағман</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_guyru_lagman">Гүйру лағман саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_guyru_lagman" name="qty_guyru_lagman" min="0" max="20" value="0"></li>
+                        <li><span>Тұшпара</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_tushpara">Тұшпара саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_tushpara" name="qty_tushpara" min="0" max="20" value="0"></li>
+                        <li><span>Нарын</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_naryn">Нарын саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_naryn" name="qty_naryn" min="0" max="20" value="0"></li>
+                        <li><span>Бульон</span><strong class="price">700 &#8376;</strong><label class="visually-hidden" for="qty_bulon">Бульон саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_bulon" name="qty_bulon" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
@@ -77,15 +91,15 @@
                         <h2 class="h4 text-brand mb-0">Екінші тағамдар</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Палау</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Ұнқуырдақ</span><strong class="price">2 200 &#8376;</strong></li>
-                        <li><span>Қуырылған лағман</span><strong class="price">2 200 &#8376;</strong></li>
-                        <li><span>Қуырдақ</span><strong class="price">3 800 &#8376;</strong></li>
-                        <li><span>Қазан кебаб</span><strong class="price">2 900 &#8376;</strong></li>
-                        <li><span>Ханума</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Орамжапырақ орамасы</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Картоп езбесімен котлет</span><strong class="price">2 000 &#8376;</strong></li>
-                        <li><span>Күрішпен тұздық</span><strong class="price">2 000 &#8376;</strong></li>
+                        <li><span>Палау</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_palau">Палау саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_palau" name="qty_palau" min="0" max="20" value="0"></li>
+                        <li><span>Ұнқуырдақ</span><strong class="price">2 200 &#8376;</strong><label class="visually-hidden" for="qty_unquyrdaq">Ұнқуырдақ саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_unquyrdaq" name="qty_unquyrdaq" min="0" max="20" value="0"></li>
+                        <li><span>Қуырылған лағман</span><strong class="price">2 200 &#8376;</strong><label class="visually-hidden" for="qty_fried_lagman">Қуырылған лағман саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_fried_lagman" name="qty_fried_lagman" min="0" max="20" value="0"></li>
+                        <li><span>Қуырдақ</span><strong class="price">3 800 &#8376;</strong><label class="visually-hidden" for="qty_quyrdaq">Қуырдақ саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_quyrdaq" name="qty_quyrdaq" min="0" max="20" value="0"></li>
+                        <li><span>Қазан кебаб</span><strong class="price">2 900 &#8376;</strong><label class="visually-hidden" for="qty_qazan_kebab">Қазан кебаб саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_qazan_kebab" name="qty_qazan_kebab" min="0" max="20" value="0"></li>
+                        <li><span>Ханума</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_hanuma">Ханума саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_hanuma" name="qty_hanuma" min="0" max="20" value="0"></li>
+                        <li><span>Орамжапырақ орамасы</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_cabbage_roll">Орамжапырақ орамасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cabbage_roll" name="qty_cabbage_roll" min="0" max="20" value="0"></li>
+                        <li><span>Картоп езбесімен котлет</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_cutlet_puree">Картоп езбесімен котлет саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cutlet_puree" name="qty_cutlet_puree" min="0" max="20" value="0"></li>
+                        <li><span>Күрішпен тұздық</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_rice_sauce">Күрішпен тұздық саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_rice_sauce" name="qty_rice_sauce" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
@@ -96,14 +110,14 @@
                         <h2 class="h4 text-brand mb-0">Фаст-фуд</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Маргарита пиццасы</span><strong class="price">2 100 &#8376;</strong></li>
-                        <li><span>Төрт сыр пиццасы</span><strong class="price">2 600 &#8376;</strong></li>
-                        <li><span>Пепперони пиццасы</span><strong class="price">2 400 &#8376;</strong></li>
-                        <li><span>BBQ пиццасы</span><strong class="price">2 400 &#8376;</strong></li>
-                        <li><span>Сыр таяқшалары</span><strong class="price">1 500 &#8376;</strong></li>
-                        <li><span>Наггетстер, 8 дана</span><strong class="price">1 500 &#8376;</strong></li>
-                        <li><span>Картоп бөліктері</span><strong class="price">1 500 &#8376;</strong></li>
-                        <li><span>Фри</span><strong class="price">1 000 &#8376;</strong></li>
+                        <li><span>Маргарита пиццасы</span><strong class="price">2 100 &#8376;</strong><label class="visually-hidden" for="qty_margarita">Маргарита пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_margarita" name="qty_margarita" min="0" max="20" value="0"></li>
+                        <li><span>Төрт сыр пиццасы</span><strong class="price">2 600 &#8376;</strong><label class="visually-hidden" for="qty_four_cheese">Төрт сыр пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_four_cheese" name="qty_four_cheese" min="0" max="20" value="0"></li>
+                        <li><span>Пепперони пиццасы</span><strong class="price">2 400 &#8376;</strong><label class="visually-hidden" for="qty_pepperoni">Пепперони пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_pepperoni" name="qty_pepperoni" min="0" max="20" value="0"></li>
+                        <li><span>BBQ пиццасы</span><strong class="price">2 400 &#8376;</strong><label class="visually-hidden" for="qty_bbq_pizza">BBQ пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_bbq_pizza" name="qty_bbq_pizza" min="0" max="20" value="0"></li>
+                        <li><span>Сыр таяқшалары</span><strong class="price">1 500 &#8376;</strong><label class="visually-hidden" for="qty_cheese_sticks">Сыр таяқшалары саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cheese_sticks" name="qty_cheese_sticks" min="0" max="20" value="0"></li>
+                        <li><span>Наггетстер, 8 дана</span><strong class="price">1 500 &#8376;</strong><label class="visually-hidden" for="qty_nuggets">Наггетстер саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_nuggets" name="qty_nuggets" min="0" max="20" value="0"></li>
+                        <li><span>Картоп бөліктері</span><strong class="price">1 500 &#8376;</strong><label class="visually-hidden" for="qty_potato_wedges">Картоп бөліктері саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_potato_wedges" name="qty_potato_wedges" min="0" max="20" value="0"></li>
+                        <li><span>Фри</span><strong class="price">1 000 &#8376;</strong><label class="visually-hidden" for="qty_fries">Фри саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_fries" name="qty_fries" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
@@ -114,9 +128,9 @@
                         <h2 class="h4 text-brand mb-0">Салаттар</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Оливье</span><strong class="price">1 400 &#8376;</strong></li>
-                        <li><span>Ачық-чучук</span><strong class="price">1 300 &#8376;</strong></li>
-                        <li><span>Балғын</span><strong class="price">1 300 &#8376;</strong></li>
+                        <li><span>Оливье</span><strong class="price">1 400 &#8376;</strong><label class="visually-hidden" for="qty_olivye">Оливье саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_olivye" name="qty_olivye" min="0" max="20" value="0"></li>
+                        <li><span>Ачық-чучук</span><strong class="price">1 300 &#8376;</strong><label class="visually-hidden" for="qty_achik_chuchuk">Ачық-чучук саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_achik_chuchuk" name="qty_achik_chuchuk" min="0" max="20" value="0"></li>
+                        <li><span>Балғын</span><strong class="price">1 300 &#8376;</strong><label class="visually-hidden" for="qty_balgin">Балғын саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_balgin" name="qty_balgin" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
@@ -127,11 +141,11 @@
                         <h2 class="h4 text-brand mb-0">Нан және тұздықтар</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Тандыр нан</span><strong class="price">150 / 300 &#8376;</strong></li>
-                        <li><span>Кетчуп</span><strong class="price">200 &#8376;</strong></li>
-                        <li><span>Майонез</span><strong class="price">200 &#8376;</strong></li>
-                        <li><span>Сырлы тұздық</span><strong class="price">200 &#8376;</strong></li>
-                        <li><span>Халапеньо</span><strong class="price">200 &#8376;</strong></li>
+                        <li><span>Тандыр нан</span><strong class="price">150 / 300 &#8376;</strong><label class="visually-hidden" for="qty_tandyr_nan">Тандыр нан саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_tandyr_nan" name="qty_tandyr_nan" min="0" max="20" value="0"></li>
+                        <li><span>Кетчуп</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_ketchup">Кетчуп саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_ketchup" name="qty_ketchup" min="0" max="20" value="0"></li>
+                        <li><span>Майонез</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_mayo">Майонез саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_mayo" name="qty_mayo" min="0" max="20" value="0"></li>
+                        <li><span>Сырлы тұздық</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_cheese_sauce">Сырлы тұздық саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cheese_sauce" name="qty_cheese_sauce" min="0" max="20" value="0"></li>
+                        <li><span>Халапеньо</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_jalapeno">Халапеньо саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_jalapeno" name="qty_jalapeno" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
@@ -142,13 +156,13 @@
                         <h2 class="h4 text-brand mb-0">Сусындар</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Coca-Cola, Pepsi, Fanta, Sprite</span><strong class="price">800 &#8376;</strong></li>
-                        <li><span>Maxi шай, Fuse tea</span><strong class="price">800 &#8376;</strong></li>
-                        <li><span>Су 0.5 л / 1 л</span><strong class="price">400 / 600 &#8376;</strong></li>
-                        <li><span>Тұран шайы 0.5 л / 1 л</span><strong class="price">500 / 800 &#8376;</strong></li>
-                        <li><span>Gorilla</span><strong class="price">700 &#8376;</strong></li>
-                        <li><span>Мохито</span><strong class="price">800 &#8376;</strong></li>
-                        <li><span>Анар, Dizzy, Zigi Zagi</span><strong class="price">600 &#8376;</strong></li>
+                        <li><span>Coca-Cola, Pepsi, Fanta, Sprite</span><strong class="price">800 &#8376;</strong><label class="visually-hidden" for="qty_soda">Газдалған сусын саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_soda" name="qty_soda" min="0" max="20" value="0"></li>
+                        <li><span>Maxi шай, Fuse tea</span><strong class="price">800 &#8376;</strong><label class="visually-hidden" for="qty_iced_tea">Салқын шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_iced_tea" name="qty_iced_tea" min="0" max="20" value="0"></li>
+                        <li><span>Су 0.5 л / 1 л</span><strong class="price">400 / 600 &#8376;</strong><label class="visually-hidden" for="qty_water">Су саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_water" name="qty_water" min="0" max="20" value="0"></li>
+                        <li><span>Тұран шайы 0.5 л / 1 л</span><strong class="price">500 / 800 &#8376;</strong><label class="visually-hidden" for="qty_turan_tea">Тұран шайы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_turan_tea" name="qty_turan_tea" min="0" max="20" value="0"></li>
+                        <li><span>Gorilla</span><strong class="price">700 &#8376;</strong><label class="visually-hidden" for="qty_gorilla">Gorilla саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_gorilla" name="qty_gorilla" min="0" max="20" value="0"></li>
+                        <li><span>Мохито</span><strong class="price">800 &#8376;</strong><label class="visually-hidden" for="qty_mojito">Мохито саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_mojito" name="qty_mojito" min="0" max="20" value="0"></li>
+                        <li><span>Анар, Dizzy, Zigi Zagi</span><strong class="price">600 &#8376;</strong><label class="visually-hidden" for="qty_energy_drink">Анар, Dizzy, Zigi Zagi саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_energy_drink" name="qty_energy_drink" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
@@ -159,28 +173,19 @@
                         <h2 class="h4 text-brand mb-0">Шай</h2>
                     </div>
                     <ul class="menu-list">
-                        <li><span>Қара шай</span><strong class="price">300 / 700 &#8376;</strong></li>
-                        <li><span>Сүтті шай</span><strong class="price">300 / 700 &#8376;</strong></li>
-                        <li><span>Көк шай</span><strong class="price">300 / 700 &#8376;</strong></li>
-                        <li><span>Ташкент шайы</span><strong class="price">1 200 / 1 500 &#8376;</strong></li>
-                        <li><span>Кофе</span><strong class="price">400 / 1 000 &#8376;</strong></li>
-                        <li><span>Компот</span><strong class="price">300 / 800 &#8376;</strong></li>
-                        <li><span>Каркаде</span><strong class="price">300 / 800 &#8376;</strong></li>
+                        <li><span>Қара шай</span><strong class="price">300 / 700 &#8376;</strong><label class="visually-hidden" for="qty_black_tea">Қара шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_black_tea" name="qty_black_tea" min="0" max="20" value="0"></li>
+                        <li><span>Сүтті шай</span><strong class="price">300 / 700 &#8376;</strong><label class="visually-hidden" for="qty_milk_tea">Сүтті шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_milk_tea" name="qty_milk_tea" min="0" max="20" value="0"></li>
+                        <li><span>Көк шай</span><strong class="price">300 / 700 &#8376;</strong><label class="visually-hidden" for="qty_green_tea">Көк шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_green_tea" name="qty_green_tea" min="0" max="20" value="0"></li>
+                        <li><span>Ташкент шайы</span><strong class="price">1 200 / 1 500 &#8376;</strong><label class="visually-hidden" for="qty_tashkent_tea">Ташкент шайы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_tashkent_tea" name="qty_tashkent_tea" min="0" max="20" value="0"></li>
+                        <li><span>Кофе</span><strong class="price">400 / 1 000 &#8376;</strong><label class="visually-hidden" for="qty_coffee">Кофе саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_coffee" name="qty_coffee" min="0" max="20" value="0"></li>
+                        <li><span>Компот</span><strong class="price">300 / 800 &#8376;</strong><label class="visually-hidden" for="qty_compote">Компот саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_compote" name="qty_compote" min="0" max="20" value="0"></li>
+                        <li><span>Каркаде</span><strong class="price">300 / 800 &#8376;</strong><label class="visually-hidden" for="qty_karkade">Каркаде саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_karkade" name="qty_karkade" min="0" max="20" value="0"></li>
                     </ul>
                 </article>
             </div>
         </div>
+        </form>
 
-        <section class="row g-4 align-items-center mt-5">
-            <div class="col-12 col-md-6">
-                <img class="img-fluid rounded shadow menu-photo" src="images/palay.jpg" alt="Dostyk restaurant дәмханасының палауы" width="400" height="225" loading="lazy">
-            </div>
-            <div class="col-12 col-md-6 text-center text-md-start">
-                <h2 class="h3 text-brand">Ұсыныс</h2>
-                <p>Негізгі тағамға палау және шай жиі бірге алынады.</p>
-                <a class="btn btn-primary" href="order.html">Тапсырыс беру</a>
-            </div>
-        </section>
     </main>
 
     <footer class="site-footer text-white py-4">

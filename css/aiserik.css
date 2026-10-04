@@ -1,4 +1,4 @@
-/* Personal Bootstrap correction layer for Aiserik Yerbol. */
+/* Personal Bootstrap correction layer */
 /* .hero-note controls the small yellow subtitle under the navbar. */
 .hero-note { letter-spacing: 0.08em; }
 /* .card-img-top controls images at the top of Bootstrap cards. */
@@ -14,8 +14,9 @@
 }
 /* .menu-list li controls each food row: name left, price right. */
 .menu-list li {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
     gap: 1rem;
     padding: 0.75rem 1rem;
     border-top: 1px solid #dee2e6;
@@ -29,3 +30,11 @@
     font-weight: 700;
     letter-spacing: 0.08em;
 }
+/* .hidden is ready for JavaScript to hide messages or generated blocks later. */
+.hidden { display: none; }
+/* .selected is ready for JavaScript to mark a chosen menu item later. */
+.selected { border-color: #d9b46f; }
+/* .success is ready for JavaScript to show a completed form message later. */
+.success { color: #17402a; }
+/* .error is ready for JavaScript to show a form problem later. */
+.error { color: #7a2e13; }

@@ -48,8 +48,8 @@ a:hover, a:focus { color: var(--dostyk-clay); }
     background: var(--dostyk-green);
     border-color: var(--dostyk-green);
 }
-/* .menu-photo, .story-photo control borders on restaurant photos. */
-.menu-photo, .story-photo { border: 3px solid var(--dostyk-gold); }
+/* .story-photo controls the border on the restaurant photo. */
+.story-photo { border: 3px solid var(--dostyk-gold); }
 /* .skip-link hides the accessibility skip link until keyboard focus. */
 .skip-link {
     z-index: 1030;

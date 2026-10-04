@@ -44,28 +44,31 @@
                 <div class="card shadow-sm border-warning">
                     <div class="card-body">
                         <h1 class="display-6 fw-bold text-brand">Тапсырыс және брондау</h1>
-                        <p class="lead">Төмендегі форма арқылы жеткізуге тапсырыс беруге немесе үстел брондауға болады.</p>
 
                         <!-- This form is a nested Bootstrap row inside the col-12 column. -->
-                        <form action="#" method="post" class="row g-3">
+                        <form id="order-request-form" action="order.html#order-confirmation" method="get" class="row g-3">
                             <div class="col-12">
                                 <h2 class="h5 text-brand">Жеке мәліметтер</h2>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-label" for="username">Аты-жөніңіз</label>
-                                <input class="form-control" type="text" id="username" name="username" placeholder="Т.А.Ә" autocomplete="name" required>
+                                <input class="form-control" type="text" id="username" name="username" autocomplete="name" required>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-label" for="useremail">Электронды пошта</label>
-                                <input class="form-control" type="email" id="useremail" name="useremail" placeholder="example@gmail.com" autocomplete="email" required>
+                                <input class="form-control" type="email" id="useremail" name="useremail" autocomplete="email" required>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-label" for="userphone">Телефон</label>
-                                <input class="form-control" type="tel" id="userphone" name="userphone" placeholder="+7**********" autocomplete="tel" required>
+                                <input class="form-control" type="tel" id="userphone" name="userphone" autocomplete="tel" required>
                             </div>
                             <div class="col-12 col-md-6">
                                 <label class="form-label" for="orderdate">Күні</label>
                                 <input class="form-control" type="date" id="orderdate" name="orderdate" required>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label class="form-label" for="preferred_time">Жеткізу немесе келу уақыты</label>
+                                <input class="form-control" type="time" id="preferred_time" name="preferred_time" min="10:00" max="22:00" required>
                             </div>
 
                             <div class="col-12">
@@ -73,7 +76,7 @@
                             </div>
                             <div class="col-12 col-md-4">
                                 <label class="form-label" for="portion_num">Порция саны</label>
-                                <input class="form-control" type="number" id="portion_num" name="portion_num" min="1" max="30" value="1" required>
+                                <input class="form-control" type="number" id="portion_num" name="portion_num" min="1" max="10" value="1" required>
                             </div>
                             <div class="col-12 col-md-8">
                                 <label class="form-label" for="main_dish">Негізгі тағам</label>
@@ -82,10 +85,16 @@
                                     <option value="palau">Палау - 2 000 &#8376;</option>
                                     <option value="kuyrdak">Қуырдақ - 3 800 &#8376;</option>
                                     <option value="lagman">Гүйру лағман - 2 000 &#8376;</option>
+                                    <option value="sorpa">Сорпа - 2 000 &#8376;</option>
+                                    <option value="qazan-kebab">Қазан кебаб - 2 900 &#8376;</option>
+                                    <option value="hanuma">Ханума - 2 000 &#8376;</option>
+                                    <option value="fried-lagman">Қуырылған лағман - 2 200 &#8376;</option>
+                                    <option value="margarita">Маргарита пиццасы - 2 100 &#8376;</option>
+                                    <option value="pepperoni">Пепперони пиццасы - 2 400 &#8376;</option>
                                 </select>
                             </div>
 
-                            <fieldset class="col-12 col-md-6">
+                            <fieldset class="col-12 col-md-4">
                                 <legend class="h6 text-brand">Қызмет түрі</legend>
                                 <div class="form-check">
                                     <input class="form-check-input" type="radio" id="delivery" name="service_type" value="delivery" checked>
@@ -101,29 +110,98 @@
                                 </div>
                             </fieldset>
 
-                            <fieldset class="col-12 col-md-6">
+                            <fieldset class="col-12 col-md-4">
                                 <legend class="h6 text-brand">Қосымша</legend>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="tea" name="extras" value="tea">
-                                    <label class="form-check-label" for="tea">Шай</label>
+                                    <input class="form-check-input" type="checkbox" id="extra_salad" name="extras" value="salad">
+                                    <label class="form-check-label" for="extra_salad">Ачық-чучук</label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" id="salad" name="extras" value="salad">
-                                    <label class="form-check-label" for="salad">Ачық-чучук</label>
+                                    <input class="form-check-input" type="checkbox" id="extra_bread" name="extras" value="bread">
+                                    <label class="form-check-label" for="extra_bread">Тандыр нан</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="extra_fries" name="extras" value="fries">
+                                    <label class="form-check-label" for="extra_fries">Фри</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="extra_potato" name="extras" value="potato">
+                                    <label class="form-check-label" for="extra_potato">Картоп бөліктері</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="extra_cheese" name="extras" value="cheese-sticks">
+                                    <label class="form-check-label" for="extra_cheese">Сыр таяқшалары</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="extra_nuggets" name="extras" value="nuggets">
+                                    <label class="form-check-label" for="extra_nuggets">Наггетстер</label>
+                                </div>
+                            </fieldset>
+
+                            <fieldset class="col-12 col-md-4">
+                                <legend class="h6 text-brand">Сусындар</legend>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_soda" name="drinks" value="soda">
+                                    <label class="form-check-label" for="drink_soda">Coca-Cola, Pepsi, Fanta, Sprite - 800 &#8376;</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_iced_tea" name="drinks" value="iced-tea">
+                                    <label class="form-check-label" for="drink_iced_tea">Maxi шай, Fuse tea - 800 &#8376;</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_water" name="drinks" value="water">
+                                    <label class="form-check-label" for="drink_water">Су 0.5 л / 1 л - 400 / 600 &#8376;</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_turan_tea" name="drinks" value="turan-tea">
+                                    <label class="form-check-label" for="drink_turan_tea">Тұран шайы 0.5 л / 1 л - 500 / 800 &#8376;</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_gorilla" name="drinks" value="gorilla">
+                                    <label class="form-check-label" for="drink_gorilla">Gorilla - 700 &#8376;</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_mojito" name="drinks" value="mojito">
+                                    <label class="form-check-label" for="drink_mojito">Мохито - 800 &#8376;</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="drink_energy" name="drinks" value="energy-drink">
+                                    <label class="form-check-label" for="drink_energy">Анар, Dizzy, Zigi Zagi - 600 &#8376;</label>
                                 </div>
                             </fieldset>
 
                             <div class="col-12">
+                                <h2 class="h5 text-brand mt-3">Үстел брондау</h2>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <label class="form-label" for="guest_count">Қонақ саны</label>
+                                <input class="form-control" type="number" id="guest_count" name="guest_count" min="1" max="10" value="2">
+                            </div>
+                            <div class="col-12 col-md-8">
+                                <label class="form-label" for="table_zone">Үстел түрі</label>
+                                <select class="form-select" id="table_zone" name="table_zone">
+                                    <option value="two">2 адамдық үстел</option>
+                                    <option value="three">3 адамдық үстел</option>
+                                    <option value="four">4 адамдық үстел</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
                                 <label class="form-label" for="comments">Мекенжай немесе ескерту</label>
-                                <textarea class="form-control" id="comments" name="comments" rows="4" placeholder="Көше, үй, пәтер немесе ұсыныс..." autocomplete="street-address"></textarea>
+                                <textarea class="form-control" id="comments" name="comments" rows="4" autocomplete="street-address"></textarea>
                             </div>
 
                             <div class="col-12 d-flex flex-wrap gap-2">
-                                <button class="btn btn-primary" type="submit">Тапсырысты растау</button>
-                                <button class="btn btn-outline-primary" type="reset">Тазалау</button>
+                                <button id="submit-order" class="btn btn-primary" type="submit">Тапсырысты растау</button>
+                                <button id="reset-order" class="btn btn-outline-primary" type="reset">Тазалау</button>
                                 <a class="btn btn-outline-primary" href="menu.html">Мәзірге қайту</a>
                             </div>
                         </form>
+
+                        <div id="order-confirmation" class="alert bg-soft-green border border-warning mt-4" role="status">
+                            <h2 class="h5 text-brand">Тапсырыс нәтижесі</h2>
+                            <p class="mb-0">Форманы жібергеннен кейін қызметкер қоңырау шалып, көрсетілген уақытты, жеткізуді және үстел брондауды нақтылайды.</p>
+                        </div>
                     </div>
                 </div>
             </section>
