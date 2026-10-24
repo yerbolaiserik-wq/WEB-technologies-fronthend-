@@ -62,3 +62,48 @@ Bootstrap does the main layout, spacing, navigation, grid, cards, buttons, and f
 ## Local Use
 
 Open `index.html` in a browser. No hosting or domain is required.
+
+## Assignment 4-5: JavaScript
+
+### Midterm correction (documented before use, no points)
+
+These HTML/CSS changes were made after the `midterm` tag and before the JavaScript work. They are committed separately as a midterm correction, because the cart and the feedback flow need them:
+
+- `menu.html` - the menu was changed to Bootstrap dish cards (`.menu-product`) with a basket form (`#menu-cart-form`), a category list (`.menu-category-nav`) and a cart panel (`#cart`, `#cart-items`, `#cart-total`, `#submit-cart`).
+- `index.html`, `menu.html`, `order.html` - the footer got a feedback form (`#feedback-form`, `#feedback_text`, `#feedback-result`).
+- `css/aiserik.css` - rules for the new blocks: `.menu-category-nav`, `.menu-product`, `.menu-qty`, `.cart-panel`, `.cart-empty`, `.feedback-box`.
+
+After this correction HTML and CSS are frozen. The only later HTML change is the `<script src="js/..." defer>` links at the end of each page. All new interface elements (search controls, address fields, summary, error messages, review cards) are created with JavaScript DOM methods. No CSS rules were added after the correction; states use `classList` with Bootstrap classes and the midterm classes (`.selected`, `.success`, `.error`).
+
+### JavaScript files
+
+- `js/data.js` - arrays: `categories`, `menuItems` (44 dishes), `deliveryDistricts`, `promoCodes`, `reviews`.
+- `js/main.js` - shared helpers, cart storage, review card function, footer feedback form (all pages).
+- `js/index.js` - home page reviews and "open now" status.
+- `js/menu.js` - menu search / category / sort, random suggestion, cart.
+- `js/order.js` - checkout of the saved cart: delivery address, delivery price, minimum order, promo code, "add to order" suggestions, live summary, validation, demonstration confirmation.
+
+### Functionality Plan
+
+| Page | Visitor goal | Planned function | Expected result | Student |
+|------|--------------|------------------|-----------------|---------|
+| menu.html | Find a dish quickly | Search + category + sort controls, count, no-results state, reset | Only matching dishes are shown with a count | Yerbol Aiserik |
+| menu.html | Collect dishes and see the price | Cart: add, +/-, remove, clear, totals, disabled checkout when empty | Correct subtotals, quantity and total after every change | Yerbol Aiserik |
+| menu.html | Get an idea what to order | Random "today's suggestion" with `Math.random()` | One main dish / fast food is suggested, no discount promised | Yerbol Aiserik |
+| order.html | Order the dishes chosen on the menu | Saved cart with +/-/remove, "add to order" suggestions (`Math.random()`), promo code KHAN2552 | Cart from menu.html appears here, total changes after every action | Yerbol Aiserik |
+| order.html | Get food delivered | Address fields (district, street, house, flat, entrance, floor, intercom), delivery price by district, minimum order 3 000 ₸ | Delivery price is added, small orders are stopped with a message | Yerbol Aiserik |
+| order.html | Know the price before sending | Live summary of dish, extras, drinks and menu cart | Total updates on every change | Yerbol Aiserik |
+| order.html | Send an order / table request | Validation of 8+ fields, errors beside fields, focus on first error | Summary with demo reference number, no data sent | Yerbol Aiserik |
+| all pages (shared) | Leave feedback | Footer form with validation and character counter | Message in the form, review card on the home page | Yerbol Aiserik |
+| index.html | Read guest opinions, check if open | Review cards from one function, "open now" status | Cards sorted newest first, status text by hour | Yerbol Aiserik |
+
+### Notes
+
+- Prices with two sizes (for example water 0.5 l / 1 l) get a size select in the card, so the cart uses the real price of the chosen size.
+- In the order summary the extras and drinks use the first (smaller) size price.
+- Delivery prices: Оңтүстік-Шығыс (Юго-Восток, where the restaurant is) - 500 ₸, Күнгей - 700 ₸, Қала орталығы (Центр) - 800 ₸, Михайловка - 900 ₸, Сұрыптау (Сортировка) - 1 000 ₸, Майқұдық and Пришахтинск - 1 200 ₸. Minimum delivery order: 3 000 ₸ of food. Promo code KHAN2552 (from the footer) gives 10% off the food price. These values are in `js/data.js` and `js/order.js`.
+- On `order.html` the "Мекенжай немесе ескерту" textarea label is changed by JavaScript to "Тапсырыс пікірі", because the address now has its own fields.
+- The reference number (`DK-1234`) is only a demonstration number made with `Math.random()`; no real order, booking or payment is created and nothing is sent to a server.
+- The three guest reviews in `js/data.js` are sample content for the demonstration.
+- Dish photos: all 44 dishes have a photo in `images/menu/`, named by the dish id (for example `images/menu/sorpa.jpg`). The photos were resized to 800 px wide (about 12-46 KB each) so the menu loads fast. The path is in the `image` property in `js/data.js`; an empty `image` would show the card without a photo.
+- The cart is kept in `localStorage`: it is filled on `menu.html` and ordered only on `order.html` (it is emptied after the demo confirmation). New reviews are also in `localStorage`. No passwords or personal data are stored.
