@@ -1,10 +1,40 @@
-/* Personal Bootstrap correction layer */
-/* .hero-note controls the small yellow subtitle under the navbar. */
+
 .hero-note { letter-spacing: 0.08em; }
-/* .card-img-top controls images at the top of Bootstrap cards. */
+
 .card-img-top {
     height: 14rem;
     object-fit: cover;
+}
+
+.menu-category-nav {
+    position: sticky;
+    top: 1rem;
+}
+.menu-category-nav .active {
+    background: var(--dostyk-green);
+    border-color: var(--dostyk-green);
+}
+
+.menu-product {
+    border: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(31, 25, 19, 0.08);
+}
+.menu-product .card-body { min-height: 11.5rem; }
+.menu-qty {
+    max-width: 4.5rem;
+}
+.cart-panel {
+    position: sticky;
+    top: 1rem;
+    border: 0;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(31, 25, 19, 0.08);
+}
+.cart-empty {
+    min-height: 14rem;
+    display: grid;
+    place-content: center;
 }
 /* .menu-list controls the food list inside each menu category card. */
 .menu-list {
@@ -30,7 +60,12 @@
     font-weight: 700;
     letter-spacing: 0.08em;
 }
-/* .hidden is ready for JavaScript to hide messages or generated blocks later. */
+/* .feedback-box keeps the footer feedback form compact. */
+.feedback-box {
+    max-width: 28rem;
+    margin-inline: auto;
+}
+/* .hidden messages */
 .hidden { display: none; }
 /* .selected is ready for JavaScript to mark a chosen menu item later. */
 .selected { border-color: #d9b46f; }
