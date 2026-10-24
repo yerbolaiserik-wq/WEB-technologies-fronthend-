@@ -102,14 +102,24 @@
     </main>
 
     <footer class="site-footer text-white py-4">
-        <div class="container d-md-flex justify-content-between align-items-center text-center text-md-start">
-            <address class="mb-3 mb-md-0">
+        <div class="container">
+            <div class="row g-3 align-items-center text-center text-md-start">
+                <address class="col-12 col-lg-4 mb-0">
                 Қарағанды қаласы, Шағын аудан Степной-4, 30<br>
                 Телефон: <a class="link-warning" href="tel:+77475791323">+7-747-579-13-23</a>
-            </address>
-            <div class="text-center text-md-end">
-                <p class="mb-1">Промокод: <span class="promo-code rounded px-2 py-1">KHAN2552</span></p>
-                <p class="mb-0">&copy; 2026 Dostyk restaurant.</p>
+                </address>
+                <form id="feedback-form" class="col-12 col-lg-4 feedback-box" action="index.html#feedback-result" method="get">
+                    <label class="form-label mb-1" for="feedback_text">Пікір қалдыру</label>
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" type="text" id="feedback_text" name="feedback" aria-describedby="feedback-result">
+                        <button class="btn btn-outline-warning" type="submit">Жіберу</button>
+                    </div>
+                    <p id="feedback-result" class="small mb-0 mt-1 text-warning">Пікіріңіз әкімшілікке жіберіледі.</p>
+                </form>
+                <div class="col-12 col-lg-4 text-center text-lg-end">
+                    <p class="mb-1">Промокод: <span class="promo-code rounded px-2 py-1">KHAN2552</span></p>
+                    <p class="mb-0">&copy; 2026 Dostyk restaurant.</p>
+                </div>
             </div>
         </div>
     </footer>

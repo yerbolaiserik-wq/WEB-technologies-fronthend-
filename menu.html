@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Dostyk restaurant ас мәзірі және негізгі бағалары">
     <meta name="author" content="Aiserik Yerbol">
-    <!-- Bootstrap 5.3.3 from CDN is used for Assignment 3 layout, navbar, buttons, cards, and responsive utilities. -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/aiserik.css">
@@ -18,7 +17,7 @@
 
     <header class="site-header text-white">
         <nav class="navbar navbar-expand-md navbar-dark">
-            <!-- container-fluid is used because the navigation background should stay full width. -->
+          
             <div class="container-fluid px-3 px-md-5">
                 <a class="navbar-brand fs-2 fw-bold" href="index.html">
                     <span class="brand-star">★</span> Dostyk <span class="d-none d-sm-inline">restaurant</span>
@@ -38,165 +37,726 @@
         <p class="hero-note text-warning text-center fw-bold mb-0 pb-3 d-none d-md-block">Ас мәзірі</p>
     </header>
 
-    <!-- The main content uses container because menu cards are easier to read with a maximum width. -->
-    <main id="main-content" class="container py-5">
+    <main id="main-content" class="container-fluid px-2 px-md-3 px-xl-4 py-5">
         <section class="text-center mb-4">
             <h1 class="display-5 fw-bold text-brand">Толық ас мәзірі</h1>
         </section>
 
-        <nav class="d-flex flex-wrap justify-content-center gap-2 mb-5" aria-label="Мәзір категориялары">
-            <a class="btn btn-primary btn-sm" href="#cart">Таңдау</a>
-            <a class="btn btn-outline-primary btn-sm" href="#soups">Бірінші тағамдар</a>
-            <a class="btn btn-outline-primary btn-sm" href="#main-dishes">Екінші тағамдар</a>
-            <a class="btn btn-outline-primary btn-sm" href="#fast-food">Фаст-фуд</a>
-            <a class="btn btn-outline-primary btn-sm" href="#salads">Салаттар</a>
-            <a class="btn btn-outline-primary btn-sm" href="#extras">Қосымша</a>
-            <a class="btn btn-outline-primary btn-sm" href="#drinks">Сусындар</a>
-            <a class="btn btn-outline-primary btn-sm" href="#tea-list">Шай</a>
-        </nav>
-
         <form id="menu-cart-form" action="order.html" method="get">
-            <section id="cart" class="alert bg-soft-green border border-warning shadow-sm mb-4">
-                <div class="row g-3 align-items-center">
-                    <div class="col-12 col-md">
-                        <h2 class="h4 text-brand">Тағам таңдау</h2>
-                        <p class="mb-0">Әр тағамнан нешеу алатыныңызды нақтылап, тапсырыс бетіне өтіңіз.</p>
-                    </div>
-                    <div class="col-12 col-md-auto">
-                        <button id="submit-cart" class="btn btn-primary" type="submit">Таңдалған тағамдарды тапсыру</button>
-                    </div>
+            <div class="row g-3 align-items-start">
+                <aside class="col-12 col-lg-2">
+                    <nav class="list-group menu-category-nav" aria-label="Мәзір категориялары">
+                        <a class="list-group-item list-group-item-action active" href="#soups">Бірінші тағамдар</a>
+                        <a class="list-group-item list-group-item-action" href="#main-dishes">Екінші тағамдар</a>
+                        <a class="list-group-item list-group-item-action" href="#fast-food">Фаст-фуд</a>
+                        <a class="list-group-item list-group-item-action" href="#salads">Салаттар</a>
+                        <a class="list-group-item list-group-item-action" href="#extras">Қосымша</a>
+                        <a class="list-group-item list-group-item-action" href="#drinks">Сусындар</a>
+                        <a class="list-group-item list-group-item-action" href="#tea-list">Шай</a>
+                    </nav>
+                </aside>
+
+                <div class="col-12 col-lg-7 col-xl-8">
+                    <section id="soups" class="mb-5">
+                        <h2 class="h3 text-brand mb-3">Бірінші тағамдар</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="sorpa" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Сорпа</h3>
+                                        <p class="text-muted small flex-grow-1">Ет сорпасы, картоп және көкөніс қосылады.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_sorpa">Сорпа саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_sorpa" name="qty_sorpa" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="sorpa">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="guyru_lagman" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Гүйру лағман</h3>
+                                        <p class="text-muted small flex-grow-1">Қол кеспе, ет және көкөніс қосылған ыстық тағам.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_guyru_lagman">Гүйру лағман саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_guyru_lagman" name="qty_guyru_lagman" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="guyru_lagman">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="tushpara" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Тұшпара</h3>
+                                        <p class="text-muted small flex-grow-1">Қамыр ішіне ет салынып, сорпамен беріледі.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_tushpara">Тұшпара саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_tushpara" name="qty_tushpara" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="tushpara">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="naryn" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Нарын</h3>
+                                        <p class="text-muted small flex-grow-1">Ет пен жұқа қамырдан дайындалатын ұлттық тағам.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_naryn">Нарын саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_naryn" name="qty_naryn" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="naryn">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="bulon" data-price="700">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">700 &#8376;</p>
+                                        <h3 class="h5 text-brand">Бульон</h3>
+                                        <p class="text-muted small flex-grow-1">Жеңіл әрі ыстық ет сорпасы.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_bulon">Бульон саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_bulon" name="qty_bulon" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="bulon">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="main-dishes" class="mb-5">
+                        <h2 class="h3 text-brand mb-3">Екінші тағамдар</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="palau" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Палау</h3>
+                                        <p class="text-muted small flex-grow-1">Күріш, ет, сәбіз және дәмдеуішпен дайындалады.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_palau">Палау саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_palau" name="qty_palau" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="palau">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="unquyrdaq" data-price="2200">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 200 &#8376;</p>
+                                        <h3 class="h5 text-brand">Ұнқуырдақ</h3>
+                                        <p class="text-muted small flex-grow-1">Қуырылған ет және ұн қосылған қою тағам.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_unquyrdaq">Ұнқуырдақ саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_unquyrdaq" name="qty_unquyrdaq" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="unquyrdaq">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="fried_lagman" data-price="2200">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 200 &#8376;</p>
+                                        <h3 class="h5 text-brand">Қуырылған лағман</h3>
+                                        <p class="text-muted small flex-grow-1">Кеспе, ет және көкөніс қуырылып беріледі.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_fried_lagman">Қуырылған лағман саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_fried_lagman" name="qty_fried_lagman" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="fried_lagman">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="quyrdaq" data-price="3800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">3 800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Қуырдақ</h3>
+                                        <p class="text-muted small flex-grow-1">Ет пен картоп қуырылып дайындалатын қою тағам.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_quyrdaq">Қуырдақ саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_quyrdaq" name="qty_quyrdaq" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="quyrdaq">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="qazan_kebab" data-price="2900">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 900 &#8376;</p>
+                                        <h3 class="h5 text-brand">Қазан кебаб</h3>
+                                        <p class="text-muted small flex-grow-1">Қазанда дайындалған ет және картоп.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_qazan_kebab">Қазан кебаб саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_qazan_kebab" name="qty_qazan_kebab" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="qazan_kebab">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="hanuma" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Ханума</h3>
+                                        <p class="text-muted small flex-grow-1">Буға піскен қамырлы ұлттық тағам.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_hanuma">Ханума саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_hanuma" name="qty_hanuma" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="hanuma">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="cabbage_roll" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Орамжапырақ орамасы</h3>
+                                        <p class="text-muted small flex-grow-1">Орамжапырақ ішіне ет пен күріш салынып дайындалады.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_cabbage_roll">Орамжапырақ орамасы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_cabbage_roll" name="qty_cabbage_roll" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="cabbage_roll">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="cutlet_puree" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Картоп езбесімен котлет</h3>
+                                        <p class="text-muted small flex-grow-1">Котлет жұмсақ картоп езбесімен бірге беріледі.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_cutlet_puree">Картоп езбесімен котлет саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_cutlet_puree" name="qty_cutlet_puree" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="cutlet_puree">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="rice_sauce" data-price="2000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Күрішпен тұздық</h3>
+                                        <p class="text-muted small flex-grow-1">Күріш және етті тұздық қосылған ыстық тағам.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_rice_sauce">Күрішпен тұздық саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_rice_sauce" name="qty_rice_sauce" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="rice_sauce">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="fast-food" class="mb-5">
+                        <h2 class="h3 text-brand mb-3">Фаст-фуд</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="margarita" data-price="2100">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 100 &#8376;</p>
+                                        <h3 class="h5 text-brand">Маргарита пиццасы</h3>
+                                        <p class="text-muted small flex-grow-1">Қызанақ соусы және ірімшік қосылған пицца.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_margarita">Маргарита пиццасы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_margarita" name="qty_margarita" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="margarita">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="four_cheese" data-price="2600">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 600 &#8376;</p>
+                                        <h3 class="h5 text-brand">Төрт сыр пиццасы</h3>
+                                        <p class="text-muted small flex-grow-1">Төрт түрлі ірімшік қосылған жұмсақ пицца.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_four_cheese">Төрт сыр пиццасы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_four_cheese" name="qty_four_cheese" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="four_cheese">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="pepperoni" data-price="2400">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 400 &#8376;</p>
+                                        <h3 class="h5 text-brand">Пепперони пиццасы</h3>
+                                        <p class="text-muted small flex-grow-1">Пепперони, ірімшік және қызанақ соусы.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_pepperoni">Пепперони пиццасы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_pepperoni" name="qty_pepperoni" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="pepperoni">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="bbq_pizza" data-price="2400">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">2 400 &#8376;</p>
+                                        <h3 class="h5 text-brand">BBQ пиццасы</h3>
+                                        <p class="text-muted small flex-grow-1">BBQ соусы, ет және ірімшік қосылған пицца.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_bbq_pizza">BBQ пиццасы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_bbq_pizza" name="qty_bbq_pizza" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="bbq_pizza">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="cheese_sticks" data-price="1500">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 500 &#8376;</p>
+                                        <h3 class="h5 text-brand">Сыр таяқшалары</h3>
+                                        <p class="text-muted small flex-grow-1">Іші жұмсақ сыр, сырты қытырлақ тіскебасар.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_cheese_sticks">Сыр таяқшалары саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_cheese_sticks" name="qty_cheese_sticks" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="cheese_sticks">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="nuggets" data-price="1500">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 500 &#8376;</p>
+                                        <h3 class="h5 text-brand">Наггетстер, 8 дана</h3>
+                                        <p class="text-muted small flex-grow-1">Қытырлақ тауық наггетстері.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_nuggets">Наггетстер саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_nuggets" name="qty_nuggets" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="nuggets">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="potato_wedges" data-price="1500">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 500 &#8376;</p>
+                                        <h3 class="h5 text-brand">Картоп бөліктері</h3>
+                                        <p class="text-muted small flex-grow-1">Дәмдеуіш қосылған картоп бөліктері.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_potato_wedges">Картоп бөліктері саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_potato_wedges" name="qty_potato_wedges" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="potato_wedges">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="fries" data-price="1000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Фри</h3>
+                                        <p class="text-muted small flex-grow-1">Қытырлақ картоп фри.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_fries">Фри саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_fries" name="qty_fries" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="fries">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="salads" class="mb-5">
+                        <h2 class="h3 text-brand mb-3">Салаттар</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="olivye" data-price="1400">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 400 &#8376;</p>
+                                        <h3 class="h5 text-brand">Оливье</h3>
+                                        <p class="text-muted small flex-grow-1">Классикалық салат, көкөніс және майонез.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_olivye">Оливье саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_olivye" name="qty_olivye" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="olivye">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="achik_chuchuk" data-price="1300">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 300 &#8376;</p>
+                                        <h3 class="h5 text-brand">Ачық-чучук</h3>
+                                        <p class="text-muted small flex-grow-1">Қызанақ, пияз және көк шөп қосылған жеңіл салат.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_achik_chuchuk">Ачық-чучук саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_achik_chuchuk" name="qty_achik_chuchuk" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="achik_chuchuk">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="balgin" data-price="1300">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 300 &#8376;</p>
+                                        <h3 class="h5 text-brand">Балғын</h3>
+                                        <p class="text-muted small flex-grow-1">Маусымдық көкөністерден дайындалған салат.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_balgin">Балғын саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_balgin" name="qty_balgin" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="balgin">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="extras" class="mb-5">
+                        <h2 class="h3 text-brand mb-3">Қосымша</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="tandyr_nan" data-price="300">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">150 / 300 &#8376;</p>
+                                        <h3 class="h5 text-brand">Тандыр нан</h3>
+                                        <p class="text-muted small flex-grow-1">Ыстық нан, жарты немесе толық порция.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_tandyr_nan">Тандыр нан саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_tandyr_nan" name="qty_tandyr_nan" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="tandyr_nan">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="ketchup" data-price="200">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">200 &#8376;</p>
+                                        <h3 class="h5 text-brand">Кетчуп</h3>
+                                        <p class="text-muted small flex-grow-1">Пицца және фаст-фудқа арналған тұздық.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_ketchup">Кетчуп саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_ketchup" name="qty_ketchup" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="ketchup">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="mayo" data-price="200">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">200 &#8376;</p>
+                                        <h3 class="h5 text-brand">Майонез</h3>
+                                        <p class="text-muted small flex-grow-1">Қосымша тұздық ретінде беріледі.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_mayo">Майонез саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_mayo" name="qty_mayo" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="mayo">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="cheese_sauce" data-price="200">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">200 &#8376;</p>
+                                        <h3 class="h5 text-brand">Сырлы тұздық</h3>
+                                        <p class="text-muted small flex-grow-1">Фаст-фуд тағамдарына арналған тұздық.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_cheese_sauce">Сырлы тұздық саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_cheese_sauce" name="qty_cheese_sauce" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="cheese_sauce">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="jalapeno" data-price="200">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">200 &#8376;</p>
+                                        <h3 class="h5 text-brand">Халапеньо</h3>
+                                        <p class="text-muted small flex-grow-1">Ащы дәм қосатын қосымша.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_jalapeno">Халапеньо саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_jalapeno" name="qty_jalapeno" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="jalapeno">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="drinks" class="mb-5">
+                        <h2 class="h3 text-brand mb-3">Сусындар</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="soda" data-price="800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Coca-Cola, Pepsi, Fanta, Sprite</h3>
+                                        <p class="text-muted small flex-grow-1">Газдалған салқын сусындар.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_soda">Газдалған сусын саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_soda" name="qty_soda" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="soda">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="iced_tea" data-price="800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Maxi шай, Fuse tea</h3>
+                                        <p class="text-muted small flex-grow-1">Салқын шай түрлері.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_iced_tea">Салқын шай саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_iced_tea" name="qty_iced_tea" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="iced_tea">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="water" data-price="600">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">400 / 600 &#8376;</p>
+                                        <h3 class="h5 text-brand">Су 0.5 л / 1 л</h3>
+                                        <p class="text-muted small flex-grow-1">Бөтелкедегі таза су.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_water">Су саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_water" name="qty_water" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="water">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="turan_tea" data-price="800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">500 / 800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Тұран шайы 0.5 л / 1 л</h3>
+                                        <p class="text-muted small flex-grow-1">Дайын салқын шай сусыны.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_turan_tea">Тұран шайы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_turan_tea" name="qty_turan_tea" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="turan_tea">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="gorilla" data-price="700">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">700 &#8376;</p>
+                                        <h3 class="h5 text-brand">Gorilla</h3>
+                                        <p class="text-muted small flex-grow-1">Энергетикалық сусын.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_gorilla">Gorilla саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_gorilla" name="qty_gorilla" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="gorilla">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="mojito" data-price="800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Мохито</h3>
+                                        <p class="text-muted small flex-grow-1">Салқын сергітетін сусын.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_mojito">Мохито саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_mojito" name="qty_mojito" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="mojito">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="energy_drink" data-price="600">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">600 &#8376;</p>
+                                        <h3 class="h5 text-brand">Анар, Dizzy, Zigi Zagi</h3>
+                                        <p class="text-muted small flex-grow-1">Салқын сусын түрлері.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_energy_drink">Анар, Dizzy, Zigi Zagi саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_energy_drink" name="qty_energy_drink" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="energy_drink">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tea-list">
+                        <h2 class="h3 text-brand mb-3">Шай</h2>
+                        <div class="row g-3">
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="black_tea" data-price="700">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">300 / 700 &#8376;</p>
+                                        <h3 class="h5 text-brand">Қара шай</h3>
+                                        <p class="text-muted small flex-grow-1">Шәйнекпен немесе кесемен беріледі.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_black_tea">Қара шай саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_black_tea" name="qty_black_tea" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="black_tea">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="milk_tea" data-price="700">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">300 / 700 &#8376;</p>
+                                        <h3 class="h5 text-brand">Сүтті шай</h3>
+                                        <p class="text-muted small flex-grow-1">Сүт қосылған қара шай.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_milk_tea">Сүтті шай саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_milk_tea" name="qty_milk_tea" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="milk_tea">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="green_tea" data-price="700">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">300 / 700 &#8376;</p>
+                                        <h3 class="h5 text-brand">Көк шай</h3>
+                                        <p class="text-muted small flex-grow-1">Жеңіл көк шай, кесемен немесе шәйнекпен.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_green_tea">Көк шай саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_green_tea" name="qty_green_tea" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="green_tea">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="tashkent_tea" data-price="1500">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">1 200 / 1 500 &#8376;</p>
+                                        <h3 class="h5 text-brand">Ташкент шайы</h3>
+                                        <p class="text-muted small flex-grow-1">Лимон, жалбыз және жеміс қосылған шай.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_tashkent_tea">Ташкент шайы саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_tashkent_tea" name="qty_tashkent_tea" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="tashkent_tea">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="coffee" data-price="1000">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">400 / 1 000 &#8376;</p>
+                                        <h3 class="h5 text-brand">Кофе</h3>
+                                        <p class="text-muted small flex-grow-1">Ыстық кофе, шағын немесе үлкен көлем.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_coffee">Кофе саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_coffee" name="qty_coffee" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="coffee">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="compote" data-price="800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">300 / 800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Компот</h3>
+                                        <p class="text-muted small flex-grow-1">Үй компоты, кесемен немесе құмырамен.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_compote">Компот саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_compote" name="qty_compote" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="compote">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-xl-4">
+                                <article class="card menu-product h-100" data-menu-item="karkade" data-price="800">
+                                    <div class="card-body d-flex flex-column">
+                                        <p class="h4 fw-bold mb-1">300 / 800 &#8376;</p>
+                                        <h3 class="h5 text-brand">Каркаде</h3>
+                                        <p class="text-muted small flex-grow-1">Жеміс дәмі бар қызыл шай.</p>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <label class="visually-hidden" for="qty_karkade">Каркаде саны</label>
+                                            <input class="form-control form-control-sm menu-qty" type="number" id="qty_karkade" name="qty_karkade" min="0" max="20" value="0">
+                                            <button class="btn btn-outline-primary btn-sm flex-grow-1" type="submit" name="selected_item" value="karkade">+ Қосу</button>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </section>
 
-        <!-- Bootstrap component: cards, changed to restaurant menu categories. At 768px and wider, col-md-6 makes two cards per row. -->
-        <div class="row g-4">
-            <div class="col-12 col-md-6" id="soups">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Бірінші тағамдар</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Сорпа</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_sorpa">Сорпа саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_sorpa" name="qty_sorpa" min="0" max="20" value="0"></li>
-                        <li><span>Гүйру лағман</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_guyru_lagman">Гүйру лағман саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_guyru_lagman" name="qty_guyru_lagman" min="0" max="20" value="0"></li>
-                        <li><span>Тұшпара</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_tushpara">Тұшпара саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_tushpara" name="qty_tushpara" min="0" max="20" value="0"></li>
-                        <li><span>Нарын</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_naryn">Нарын саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_naryn" name="qty_naryn" min="0" max="20" value="0"></li>
-                        <li><span>Бульон</span><strong class="price">700 &#8376;</strong><label class="visually-hidden" for="qty_bulon">Бульон саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_bulon" name="qty_bulon" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
+                <aside class="col-12 col-lg-3 col-xl-2" id="cart">
+                    <section class="card cart-panel">
+                        <div class="card-body">
+                            <h2 class="h3 text-brand">Себет</h2>
+                            <div id="cart-items" class="cart-empty text-center py-5" role="status">
+                                <p class="h5 mb-2">Себет әзірше бос</p>
+                                <p class="mb-0 text-muted">Тағам санын таңдап, тапсырысты жалғастырыңыз.</p>
+                            </div>
+                            <div class="border-top pt-3 mt-3">
+                                <p class="d-flex justify-content-between mb-3">
+                                    <span>Жалпы баға</span>
+                                    <strong id="cart-total">0 &#8376;</strong>
+                                </p>
+                                <button id="submit-cart" class="btn btn-primary w-100" type="submit">Тапсырысты жалғастыру</button>
+                            </div>
+                        </div>
+                    </section>
+                </aside>
             </div>
-
-            <div class="col-12 col-md-6" id="main-dishes">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Екінші тағамдар</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Палау</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_palau">Палау саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_palau" name="qty_palau" min="0" max="20" value="0"></li>
-                        <li><span>Ұнқуырдақ</span><strong class="price">2 200 &#8376;</strong><label class="visually-hidden" for="qty_unquyrdaq">Ұнқуырдақ саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_unquyrdaq" name="qty_unquyrdaq" min="0" max="20" value="0"></li>
-                        <li><span>Қуырылған лағман</span><strong class="price">2 200 &#8376;</strong><label class="visually-hidden" for="qty_fried_lagman">Қуырылған лағман саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_fried_lagman" name="qty_fried_lagman" min="0" max="20" value="0"></li>
-                        <li><span>Қуырдақ</span><strong class="price">3 800 &#8376;</strong><label class="visually-hidden" for="qty_quyrdaq">Қуырдақ саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_quyrdaq" name="qty_quyrdaq" min="0" max="20" value="0"></li>
-                        <li><span>Қазан кебаб</span><strong class="price">2 900 &#8376;</strong><label class="visually-hidden" for="qty_qazan_kebab">Қазан кебаб саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_qazan_kebab" name="qty_qazan_kebab" min="0" max="20" value="0"></li>
-                        <li><span>Ханума</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_hanuma">Ханума саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_hanuma" name="qty_hanuma" min="0" max="20" value="0"></li>
-                        <li><span>Орамжапырақ орамасы</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_cabbage_roll">Орамжапырақ орамасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cabbage_roll" name="qty_cabbage_roll" min="0" max="20" value="0"></li>
-                        <li><span>Картоп езбесімен котлет</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_cutlet_puree">Картоп езбесімен котлет саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cutlet_puree" name="qty_cutlet_puree" min="0" max="20" value="0"></li>
-                        <li><span>Күрішпен тұздық</span><strong class="price">2 000 &#8376;</strong><label class="visually-hidden" for="qty_rice_sauce">Күрішпен тұздық саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_rice_sauce" name="qty_rice_sauce" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6" id="fast-food">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Фаст-фуд</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Маргарита пиццасы</span><strong class="price">2 100 &#8376;</strong><label class="visually-hidden" for="qty_margarita">Маргарита пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_margarita" name="qty_margarita" min="0" max="20" value="0"></li>
-                        <li><span>Төрт сыр пиццасы</span><strong class="price">2 600 &#8376;</strong><label class="visually-hidden" for="qty_four_cheese">Төрт сыр пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_four_cheese" name="qty_four_cheese" min="0" max="20" value="0"></li>
-                        <li><span>Пепперони пиццасы</span><strong class="price">2 400 &#8376;</strong><label class="visually-hidden" for="qty_pepperoni">Пепперони пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_pepperoni" name="qty_pepperoni" min="0" max="20" value="0"></li>
-                        <li><span>BBQ пиццасы</span><strong class="price">2 400 &#8376;</strong><label class="visually-hidden" for="qty_bbq_pizza">BBQ пиццасы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_bbq_pizza" name="qty_bbq_pizza" min="0" max="20" value="0"></li>
-                        <li><span>Сыр таяқшалары</span><strong class="price">1 500 &#8376;</strong><label class="visually-hidden" for="qty_cheese_sticks">Сыр таяқшалары саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cheese_sticks" name="qty_cheese_sticks" min="0" max="20" value="0"></li>
-                        <li><span>Наггетстер, 8 дана</span><strong class="price">1 500 &#8376;</strong><label class="visually-hidden" for="qty_nuggets">Наггетстер саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_nuggets" name="qty_nuggets" min="0" max="20" value="0"></li>
-                        <li><span>Картоп бөліктері</span><strong class="price">1 500 &#8376;</strong><label class="visually-hidden" for="qty_potato_wedges">Картоп бөліктері саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_potato_wedges" name="qty_potato_wedges" min="0" max="20" value="0"></li>
-                        <li><span>Фри</span><strong class="price">1 000 &#8376;</strong><label class="visually-hidden" for="qty_fries">Фри саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_fries" name="qty_fries" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6" id="salads">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Салаттар</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Оливье</span><strong class="price">1 400 &#8376;</strong><label class="visually-hidden" for="qty_olivye">Оливье саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_olivye" name="qty_olivye" min="0" max="20" value="0"></li>
-                        <li><span>Ачық-чучук</span><strong class="price">1 300 &#8376;</strong><label class="visually-hidden" for="qty_achik_chuchuk">Ачық-чучук саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_achik_chuchuk" name="qty_achik_chuchuk" min="0" max="20" value="0"></li>
-                        <li><span>Балғын</span><strong class="price">1 300 &#8376;</strong><label class="visually-hidden" for="qty_balgin">Балғын саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_balgin" name="qty_balgin" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6" id="extras">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Нан және тұздықтар</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Тандыр нан</span><strong class="price">150 / 300 &#8376;</strong><label class="visually-hidden" for="qty_tandyr_nan">Тандыр нан саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_tandyr_nan" name="qty_tandyr_nan" min="0" max="20" value="0"></li>
-                        <li><span>Кетчуп</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_ketchup">Кетчуп саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_ketchup" name="qty_ketchup" min="0" max="20" value="0"></li>
-                        <li><span>Майонез</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_mayo">Майонез саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_mayo" name="qty_mayo" min="0" max="20" value="0"></li>
-                        <li><span>Сырлы тұздық</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_cheese_sauce">Сырлы тұздық саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_cheese_sauce" name="qty_cheese_sauce" min="0" max="20" value="0"></li>
-                        <li><span>Халапеньо</span><strong class="price">200 &#8376;</strong><label class="visually-hidden" for="qty_jalapeno">Халапеньо саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_jalapeno" name="qty_jalapeno" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="col-12 col-md-6" id="drinks">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Сусындар</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Coca-Cola, Pepsi, Fanta, Sprite</span><strong class="price">800 &#8376;</strong><label class="visually-hidden" for="qty_soda">Газдалған сусын саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_soda" name="qty_soda" min="0" max="20" value="0"></li>
-                        <li><span>Maxi шай, Fuse tea</span><strong class="price">800 &#8376;</strong><label class="visually-hidden" for="qty_iced_tea">Салқын шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_iced_tea" name="qty_iced_tea" min="0" max="20" value="0"></li>
-                        <li><span>Су 0.5 л / 1 л</span><strong class="price">400 / 600 &#8376;</strong><label class="visually-hidden" for="qty_water">Су саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_water" name="qty_water" min="0" max="20" value="0"></li>
-                        <li><span>Тұран шайы 0.5 л / 1 л</span><strong class="price">500 / 800 &#8376;</strong><label class="visually-hidden" for="qty_turan_tea">Тұран шайы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_turan_tea" name="qty_turan_tea" min="0" max="20" value="0"></li>
-                        <li><span>Gorilla</span><strong class="price">700 &#8376;</strong><label class="visually-hidden" for="qty_gorilla">Gorilla саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_gorilla" name="qty_gorilla" min="0" max="20" value="0"></li>
-                        <li><span>Мохито</span><strong class="price">800 &#8376;</strong><label class="visually-hidden" for="qty_mojito">Мохито саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_mojito" name="qty_mojito" min="0" max="20" value="0"></li>
-                        <li><span>Анар, Dizzy, Zigi Zagi</span><strong class="price">600 &#8376;</strong><label class="visually-hidden" for="qty_energy_drink">Анар, Dizzy, Zigi Zagi саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_energy_drink" name="qty_energy_drink" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
-            </div>
-
-            <div class="col-12" id="tea-list">
-                <article class="card h-100">
-                    <div class="card-header bg-soft-green">
-                        <h2 class="h4 text-brand mb-0">Шай</h2>
-                    </div>
-                    <ul class="menu-list">
-                        <li><span>Қара шай</span><strong class="price">300 / 700 &#8376;</strong><label class="visually-hidden" for="qty_black_tea">Қара шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_black_tea" name="qty_black_tea" min="0" max="20" value="0"></li>
-                        <li><span>Сүтті шай</span><strong class="price">300 / 700 &#8376;</strong><label class="visually-hidden" for="qty_milk_tea">Сүтті шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_milk_tea" name="qty_milk_tea" min="0" max="20" value="0"></li>
-                        <li><span>Көк шай</span><strong class="price">300 / 700 &#8376;</strong><label class="visually-hidden" for="qty_green_tea">Көк шай саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_green_tea" name="qty_green_tea" min="0" max="20" value="0"></li>
-                        <li><span>Ташкент шайы</span><strong class="price">1 200 / 1 500 &#8376;</strong><label class="visually-hidden" for="qty_tashkent_tea">Ташкент шайы саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_tashkent_tea" name="qty_tashkent_tea" min="0" max="20" value="0"></li>
-                        <li><span>Кофе</span><strong class="price">400 / 1 000 &#8376;</strong><label class="visually-hidden" for="qty_coffee">Кофе саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_coffee" name="qty_coffee" min="0" max="20" value="0"></li>
-                        <li><span>Компот</span><strong class="price">300 / 800 &#8376;</strong><label class="visually-hidden" for="qty_compote">Компот саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_compote" name="qty_compote" min="0" max="20" value="0"></li>
-                        <li><span>Каркаде</span><strong class="price">300 / 800 &#8376;</strong><label class="visually-hidden" for="qty_karkade">Каркаде саны</label><input class="form-control form-control-sm w-auto" type="number" id="qty_karkade" name="qty_karkade" min="0" max="20" value="0"></li>
-                    </ul>
-                </article>
-            </div>
-        </div>
         </form>
-
     </main>
 
     <footer class="site-footer text-white py-4">
-        <div class="container d-md-flex justify-content-between align-items-center text-center text-md-start">
-            <address class="mb-3 mb-md-0">
+        <div class="container">
+            <div class="row g-3 align-items-center text-center text-md-start">
+                <address class="col-12 col-lg-4 mb-0">
                 Қарағанды қаласы, Шағын аудан Степной-4, 30 |
                 <a class="link-warning" href="tel:+77475791323">+7-747-579-13-23</a>
-            </address>
-            <div class="text-center text-md-end">
-                <p class="mb-1">Промокод: <span class="promo-code rounded px-2 py-1">KHAN2552</span></p>
-                <p class="mb-0">&copy; 2026 Dostyk restaurant.</p>
+                </address>
+                <form id="feedback-form" class="col-12 col-lg-4 feedback-box" action="menu.html#feedback-result" method="get">
+                    <label class="form-label mb-1" for="feedback_text">Пікір қалдыру</label>
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" type="text" id="feedback_text" name="feedback" aria-describedby="feedback-result">
+                        <button class="btn btn-outline-warning" type="submit">Жіберу</button>
+                    </div>
+                    <p id="feedback-result" class="small mb-0 mt-1 text-warning">Пікіріңіз әкімшілікке жіберіледі.</p>
+                </form>
+                <div class="col-12 col-lg-4 text-center text-lg-end">
+                    <p class="mb-1">Промокод: <span class="promo-code rounded px-2 py-1">KHAN2552</span></p>
+                    <p class="mb-0">&copy; 2026 Dostyk restaurant.</p>
+                </div>
             </div>
         </div>
     </footer>
@@ -204,4 +764,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
