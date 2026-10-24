@@ -67,7 +67,7 @@ What I used:
 
 Date: 2026-10-02
 
-Tool used: Codex
+Tool used: chatgpt
 
 What I asked:
 
@@ -81,29 +81,9 @@ What I used:
 
 \- I updated the README with the Midterm page list, three user journeys, JavaScript preparation notes, and quality pass list.
 
-\- I changed the order form so it no longer uses unfinished `action="#"` logic.
-
 \- I added a visible order confirmation area for the form flow.
 
 \- I added JavaScript-ready ids for the form buttons and result area.
-
-\- I added exact time and table booking fields to complete the delivery and reservation logic.
-
-\- I changed the table booking choice to 2, 3, and 4 person table options.
-
-\- I limited the portion count and guest count fields to 10.
-
-\- I added more main dish options to the order form.
-
-\- I added more extra food choices and a separate drinks section to the order form.
-
-\- I updated the order form drinks section to match the menu page drink list and prices.
-
-\- I removed placeholder text from the order form fields and kept labels for clarity.
-
-\- I added quantity fields to `menu.html` and a submit button that sends the selected values to `order.html`.
-
-\- I added CSS state classes `.hidden`, `.selected`, `.success`, and `.error` for later JavaScript work.
 
 Important note:
 
