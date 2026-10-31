@@ -89,3 +89,15 @@ Important note:
 
 \- I checked these changes myself and will be able to explain them during defense.
 
+## Assignment 4 jQuery assistance
+
+Date: 2026-10-30
+
+Tool used: Chatpgt
+
+ \- help to understand what to vary, what don't have to be vary
+
+ \- review the project and suggested jquery functions
+
+ \- help to understand Jquery syntex and implementations, functions
+
