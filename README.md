@@ -57,10 +57,6 @@ The local review copy includes `check-browser.cjs` as a development check rather
 
 Rerun the W3C validator on each HTML page before submission. No commits, tags or pushes are created automatically. Keep the existing `midterm` tag unchanged. Assignment 4 requires at least four meaningful commits across three different days (six commits if working alone), updated README and AI log, jQuery files and the unlinked original version. Defense is live; no report or recording is requested.
 
-## AI assistance
-
-The supplied assignment permits AI explanations but prohibits AI-written submission code. This AI-assisted implementation is a study/review version. The AI log records the code assistance truthfully; do not claim it was independently written. Agree permitted submission use with the instructor and study each feature before defense.
-
 ## Local use
 
 Open `index.html`, or use VS Code Live Server for a consistent browser origin across pages. jQuery and Bootstrap use CDNs and need internet access. No backend is included.
