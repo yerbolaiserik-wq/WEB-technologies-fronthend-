@@ -51,12 +51,6 @@ The old comparison file contains the original feature names `setupFeedbackForm`,
 - Feedback and cart are stored in this browser. Feedback is not sent to administration. The public guest-review section has been removed; feedback still shows a result after submission.
 - Existing content/photos are retained; the author should verify restaurant facts, pricing rules and photo ownership before real use.
 
-## Verification
-
-The local review copy includes `check-browser.cjs` as a development check rather than a runtime dependency. It covers filtering, cart actions and sizes, saved-cart checkout, delivery/promo calculations, validation/reset, booking without food, capacity and safe feedback. It checks all pages at 375, 768 and 1440 pixels, broken images, duplicate ids and browser errors. Official CDN assets are cached temporarily for repeatable tests.
-
-Rerun the W3C validator on each HTML page before submission. No commits, tags or pushes are created automatically. Keep the existing `midterm` tag unchanged. Assignment 4 requires at least four meaningful commits across three different days (six commits if working alone), updated README and AI log, jQuery files and the unlinked original version. Defense is live; no report or recording is requested.
-
 ## Local use
 
 Open `index.html`, or use VS Code Live Server for a consistent browser origin across pages. jQuery and Bootstrap use CDNs and need internet access. No backend is included.
